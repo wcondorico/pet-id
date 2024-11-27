@@ -11,11 +11,14 @@
       border-radius: 10px;
       padding: 25px;
       gap: 25px;
+      $primary-color-bold: #bbcdce;
+      $primary-color: #d7ebec;
+      $secondary-color: #c8ebef;
 
       &__search {
         width: 665px;
         height: 50px;
-        background-color: #d9f6f8;
+        background-color: $primary-color;
         border-radius: 10px;
         display: flex;
         padding: 0 15px;
@@ -37,116 +40,79 @@
         }
       }
 
-      &__profile {
+      &__name {
         display: flex;
-        width: 700px;
-        height: 250px;
+        width: 660px;
+        height: 210px;
+        background-color: $primary-color;
+        border-radius: 10px;
+        margin-right: 20px;
+        flex-direction: column;
+        padding: 20px;
 
-        .name {
-          display: flex;
-          width: 410px;
-          height: 210px;
-          background-color: #d9f6f8;
-          border-radius: 10px;
-          margin-right: 20px;
-          flex-direction: column;
-          padding: 20px;
-
-          & > span {
-            font-weight: 700;
-            font-size: 14px;
-            color: #45474F;
-          }
-
-          & > h1 {
-            font-weight: 800;
-            font-size: 40px;
-            margin: 10px 0;
-            color: #783CAC;
-          }
-
-          & > p {
-            margin: 0;
-            margin-bottom: 15px;
-          }
-
-          .avatars {
-            width: 100%;
-            height: 48px;
-            background-color: rgb(199, 198, 198);
-          }
+        & > span {
+          font-weight: 700;
+          font-size: 14px;
+          color: #45474f;
         }
 
-        .card {
+        & > h1 {
+          font-weight: 800;
+          font-size: 40px;
+          margin: 10px 0;
+          color: #783cac;
+        }
+
+        & > p {
+          margin: 0;
+          margin-bottom: 15px;
+        }
+
+        .avatars {
+          width: 100%;
+          height: 48px;
+          background-color: rgb(199, 198, 198);
+        }
+      }
+
+      &__card {
+        display: flex;
+        width: 700px;
+        gap: 20px;
+
+        .button {
           display: flex;
+          width: 340px;
+          height: 115px;
+          background-color: $primary-color;
+          border-radius: 10px;
+          justify-content: center;
+          align-items: center;
           flex-direction: column;
-          width: 230px;
-          height: 250px;
-          gap: 20px;
+          gap: 5px;
+          transition: background-color 0.5s, transform 0.2s;
+          cursor: pointer;
 
-          &__edit {
-            display: flex;
-            width: 230px;
-            height: 115px;
-            background-color: #d9f6f8;
-            border-radius: 10px;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 5px;
-            transition: background-color 0.5s, transform 0.2s;
-            cursor: pointer;
-
-            &:hover {
-              background-color: #C8EBEF;
-              transform: scale(1.1);
-            }
-
-            & > i {
-              font-size: 32px;
-              color: #92949F;
-            }
-
-            & > span {
-              color: #92949F;
-              font-weight: 900;
-            }
+          &:hover {
+            background-color: $secondary-color;
+            transform: scale(1.1);
           }
 
-          &__pet {
-            display: flex;
-            width: 230px;
-            height: 115px;
-            background-color: #d9f6f8;
-            border-radius: 10px;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 5px;
-            transition: background-color 0.5s, transform 0.2s ;
-            cursor: pointer;
+          & > i {
+            font-size: 32px;
+            color: #92949f;
+          }
 
-            &:hover {
-              background-color: #C8EBEF;
-              transform: scale(1.1);
-            }
-
-            & > i {
-              font-size: 32px;
-              color: #92949F;
-            }
-
-            & > span {
-              color: #92949F;
-              font-weight: 900;
-            }
+          & > span {
+            color: #92949f;
+            font-weight: 900;
           }
         }
       }
 
       &__config {
         display: flex;
-        background-color: #d9f6f8;
+        background-color: $primary-color;
         border-radius: 10px;
         width: 700px;
         flex-direction: column;
@@ -165,27 +131,26 @@
           margin: 0;
           padding: 0;
 
-
           & > li {
-          display: flex;
-          width: 660px;
-          height: 45px;
-          align-items: center;
-          justify-content: space-between;
-          border-radius: 10px;
-          padding: 0 20px;
-          transition: background-color 0.3s;
-          cursor: pointer;
+            display: flex;
+            width: 660px;
+            height: 45px;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            padding: 0 20px;
+            transition: background-color 0.3s;
+            cursor: pointer;
 
-          &:hover {
-            background-color: #C8EBEF;
+            &:hover {
+              background-color: $secondary-color;
 
-            .left {
-              & > div {
-                background-color: #d9f6f8;
+              .left {
+                & > div {
+                  background-color: #d9f6f8;
+                }
               }
             }
-          }
 
             .left {
               display: flex;
@@ -196,7 +161,7 @@
               & > div {
                 width: 35px;
                 height: 35px;
-                background-color: #C8EBEF;
+                background-color: $secondary-color;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -204,7 +169,7 @@
 
                 & > i {
                   font-size: 24px;
-                  color: #91949E;
+                  color: #91949e;
                 }
               }
             }
@@ -215,7 +180,7 @@
               align-items: center;
 
               & > i {
-                color: #91949E;
+                color: #91949e;
               }
             }
           }

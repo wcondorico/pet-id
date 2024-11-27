@@ -1,25 +1,34 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
 <div class="main-container">
   <div class="header">
-    <div class="header__img">
+    <div class="header__logo">
       <img src="doge.svg" alt="">
+      <span>PetID</span>
     </div>
-    <div class="header__menu">
-      <ul>
-        <li>Blog</li>
-        <li>Anuncios</li>
-        <li>Adopción</li>
-      </ul>
-    </div>
-    <div class="header__profile">
-      <a href="">
-        <i class="material-icons avatar">pets</i>
-      </a>
-      <span>Perfil</span>
-      <i class="material-icons avatar">keyboard_arrow_down</i>
+    <div class="header__profile" (click)="profileActived()" >
+      <div class="dropdown">
+        <i class="material-icons dropdown__avatar">pets</i>
+        <div>
+          <span class="text" [ngStyle]="{'color': profileIsActived() ? '#783CAC' : '#45474F'}">Perfil</span>
+          @if (profileIsActived()) {
+            <i class="material-icons icon">keyboard_arrow_down</i>
+          }
+          @else {
+            <i class="material-icons icon">keyboard_arrow_right</i>
+          }
+        </div>
+      </div>
+      @if (profileIsActived()) {
+        <div class="options">
+          <ul>
+            <li>Cerrar sesión</li>
+          </ul>
+        </div>
+      }
     </div>
   </div>
   <router-outlet></router-outlet>
   <div class="footer">
-
   </div>
 </div>
