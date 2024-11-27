@@ -43,12 +43,9 @@
       &__name {
         display: flex;
         width: 660px;
-        height: 210px;
-        background-color: $primary-color;
         border-radius: 10px;
-        margin-right: 20px;
         flex-direction: column;
-        padding: 20px;
+        padding: 0 20px;
 
         & > span {
           font-weight: 700;
@@ -59,7 +56,7 @@
         & > h1 {
           font-weight: 800;
           font-size: 40px;
-          margin: 10px 0;
+          margin: 0;
           color: #783cac;
         }
 
