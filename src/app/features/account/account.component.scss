@@ -5,9 +5,7 @@
 
   .main-container {
     width: 100%;
-    height: 100%;
-    background-color: red;
-    position: relative;
+    background-color: #FAFAFA;
 
     .header {
       width: 100%;
@@ -16,34 +14,57 @@
       padding: 0 40px;
       align-items: center;
       height: 80px;
-      background-color: blue;
+      background: linear-gradient(to right, #D2E5E0, #C8EBEF);
 
       &__img {
         width: 120px;
         height: 35px;
-        background-color: antiquewhite;
+
+        & > img {
+          width: 35px;
+        }
       }
 
       &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 450px;
         height: 35px;
-        background-color: aqua;
+
+        & > ul {
+          list-style: none;
+          display: flex;
+          gap: 20px;
+
+          & > li {
+            cursor: pointer;
+          }
+
+        }
       }
 
       &__profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
         width: 120px;
         height: 35px;
-        background-color: aquamarine;
+        cursor: pointer;
+
+        .avatar {
+          font-size: 30px;
+        }
       }
 
     }
 
     .footer {
-      position: absolute;
       bottom: 0;
       width: 100%;
-      height: 100px;
-      background-color: blanchedalmond;
+      height: 150px;
+      background: linear-gradient(to right, #FFD8E0, #F9ECEF);
     }
 
   }
