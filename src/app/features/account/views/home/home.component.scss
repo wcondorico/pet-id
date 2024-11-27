@@ -1,6 +1,226 @@
 :host {
-
   .home {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
 
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 700px;
+      border-radius: 10px;
+      padding: 25px;
+      gap: 25px;
+
+      &__search {
+        width: 665px;
+        height: 50px;
+        background-color: #d9f6f8;
+        border-radius: 10px;
+        display: flex;
+        padding: 0 15px;
+        gap: 10px;
+        align-items: center;
+        border: #cfd4d4 solid 2.5px;
+
+        & > i {
+          font-size: 32px;
+        }
+
+        & input {
+          background-color: transparent;
+          border: 0;
+          font-size: 20px;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      &__profile {
+        display: flex;
+        width: 700px;
+        height: 250px;
+
+        .name {
+          display: flex;
+          width: 410px;
+          height: 210px;
+          background-color: #d9f6f8;
+          border-radius: 10px;
+          margin-right: 20px;
+          flex-direction: column;
+          padding: 20px;
+
+          & > span {
+            font-weight: 700;
+            font-size: 14px;
+            color: #45474F;
+          }
+
+          & > h1 {
+            font-weight: 800;
+            font-size: 40px;
+            margin: 10px 0;
+            color: #783CAC;
+          }
+
+          & > p {
+            margin: 0;
+            margin-bottom: 15px;
+          }
+
+          .avatars {
+            width: 100%;
+            height: 48px;
+            background-color: rgb(199, 198, 198);
+          }
+        }
+
+        .card {
+          display: flex;
+          flex-direction: column;
+          width: 230px;
+          height: 250px;
+          gap: 20px;
+
+          &__edit {
+            display: flex;
+            width: 230px;
+            height: 115px;
+            background-color: #d9f6f8;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+            transition: background-color 0.5s, transform 0.2s;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #C8EBEF;
+              transform: scale(1.1);
+            }
+
+            & > i {
+              font-size: 32px;
+              color: #92949F;
+            }
+
+            & > span {
+              color: #92949F;
+              font-weight: 900;
+            }
+          }
+
+          &__pet {
+            display: flex;
+            width: 230px;
+            height: 115px;
+            background-color: #d9f6f8;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+            transition: background-color 0.5s, transform 0.2s ;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #C8EBEF;
+              transform: scale(1.1);
+            }
+
+            & > i {
+              font-size: 32px;
+              color: #92949F;
+            }
+
+            & > span {
+              color: #92949F;
+              font-weight: 900;
+            }
+          }
+        }
+      }
+
+      &__config {
+        display: flex;
+        background-color: #d9f6f8;
+        border-radius: 10px;
+        width: 700px;
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 10px;
+
+        & > h2 {
+          margin: 0;
+          margin-left: 20px;
+          margin-bottom: 10px;
+        }
+
+        & > ul {
+          flex-direction: column;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+
+          & > li {
+          display: flex;
+          width: 660px;
+          height: 45px;
+          align-items: center;
+          justify-content: space-between;
+          border-radius: 10px;
+          padding: 0 20px;
+          transition: background-color 0.3s;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #C8EBEF;
+
+            .left {
+              & > div {
+                background-color: #d9f6f8;
+              }
+            }
+          }
+
+            .left {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+
+              & > div {
+                width: 35px;
+                height: 35px;
+                background-color: #C8EBEF;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+
+                & > i {
+                  font-size: 24px;
+                  color: #91949E;
+                }
+              }
+            }
+
+            .right {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              & > i {
+                color: #91949E;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
