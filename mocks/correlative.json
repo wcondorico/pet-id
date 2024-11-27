@@ -1,0 +1,114 @@
+{
+  "correlative/gender": {
+    "GET": {
+      "nameResponse": "getAllGender",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "getAllGender",
+          "statusCode": "200",
+          "body": [
+            {
+              "id": 1,
+              "gender": "Male"
+            },
+            {
+              "id": 2,
+              "gender": "Female"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "correlative/specie": {
+    "GET": {
+      "nameResponse": "getAllSpecie",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "getAllSpecie",
+          "statusCode": "200",
+          "body": [
+            {
+              "id": 1,
+              "specie": "Dog"
+            },
+            {
+              "id": 2,
+              "specie": "Cat"
+            },
+            {
+              "id": 3,
+              "specie": "Mouse"
+            },
+            {
+              "id": 4,
+              "specie": "Monkey"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "correlative/specie/:specieId/race": {
+    "GET": {
+      "nameResponse": "getAllRaceBySpecie",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "getAllRaceBySpecie",
+          "statusCode": "200",
+          "body": [
+            {
+              "id": 3,
+              "race": "Pastor Aleman",
+              "specieId": 1
+            },
+            {
+              "id": 4,
+              "race": "Pugs",
+              "specieId": 1
+            },
+            {
+              "id": 5,
+              "race": "Schnauzer",
+              "specieId": 1
+            },
+            {
+              "id": 6,
+              "race": "Chihuahua",
+              "specieId": 1
+            },
+            {
+              "id": 7,
+              "race": "Pitbull",
+              "specieId": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

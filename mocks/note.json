@@ -1,0 +1,237 @@
+{
+  "pet/:petId/note": {
+    "GET": {
+      "nameResponse": "getAll",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "getAll",
+          "statusCode": "200",
+          "body": [
+            {
+              "id": 3,
+              "note": "enim aliquam adipisci",
+              "date": "2024-11-27T17:40:03.109Z",
+              "petId": 7
+            },
+            {
+              "id": 1,
+              "note": "pariatur occaecati quis",
+              "date": "2024-11-27T17:40:01.450Z",
+              "petId": 7
+            }
+          ]
+        }
+      ]
+    },
+    "POST": {
+      "nameResponse": "Created",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "Created",
+          "statusCode": "201",
+          "body": {
+            "id": 6,
+            "note": "dolor exercitationem laboriosam",
+            "date": "2024-11-27T18:34:56.034Z",
+            "petId": 7
+          }
+        },
+        {
+          "name": "ErrDataMiss",
+          "statusCode": "400",
+          "body": {
+            "message": [
+              "note must be a string"
+            ],
+            "error": "Bad Request",
+            "statusCode": 400
+          }
+        }
+      ]
+    }
+  },
+  "pet/:petId/note/:noteId": {
+    "GET": {
+      "nameResponse": "getByPetIdByNoteId",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "NoteDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Note doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "getByPetIdByNoteId",
+          "statusCode": "200",
+          "body": [
+            {
+              "id": 3,
+              "note": "enim aliquam adipisci",
+              "date": "2024-11-27T17:40:03.109Z",
+              "petId": 7
+            },
+            {
+              "id": 1,
+              "note": "pariatur occaecati quis",
+              "date": "2024-11-27T17:40:01.450Z",
+              "petId": 7
+            },
+            {
+              "id": 6,
+              "note": "dolor exercitationem laboriosam",
+              "date": "2024-11-27T18:34:56.034Z",
+              "petId": 7
+            }
+          ]
+        }
+      ]
+    },
+    "PUT": {
+      "nameResponse": "update",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "NoteDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Note doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "ErrDataMiss",
+          "statusCode": "400",
+          "body": {
+            "message": [
+              "note must be a string"
+            ],
+            "error": "Bad Request",
+            "statusCode": 400
+          }
+        },
+        {
+          "name": "update",
+          "statusCode": "200",
+          "body": {
+            "id": 3,
+            "note": "corporis ut doloremque",
+            "date": "2024-11-27T17:40:03.109Z",
+            "petId": 7
+          }
+        }
+      ]
+    },
+    "DELETE": {
+      "nameResponse": "delete",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "NoteDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Note doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "delete",
+          "statusCode": "200",
+          "body": {
+            "id": 6,
+            "note": "dolor exercitationem laboriosam",
+            "date": "2024-11-27T18:34:56.034Z",
+            "petId": 7
+          }
+        }
+      ]
+    }
+  }
+}

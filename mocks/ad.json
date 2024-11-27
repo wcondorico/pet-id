@@ -1,0 +1,193 @@
+{
+  "ad": {
+    "GET": {
+      "nameResponse": "getAll",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "getAll",
+          "statusCode": "200",
+          "body": [
+            {
+              "id": 2,
+              "title": "ejem2",
+              "description": "ejem 2",
+              "image": null,
+              "userId": 1
+            },
+            {
+              "id": 3,
+              "title": "ejem32",
+              "description": "ejem 2",
+              "image": null,
+              "userId": 1
+            },
+            {
+              "id": 5,
+              "title": "Jeffery",
+              "description": "qui reiciendis dolores",
+              "image": "2.179.154.166",
+              "userId": 1
+            }
+          ]
+        }
+      ]
+    },
+    "POST": {
+      "nameResponse": "Created",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "Created",
+          "statusCode": "201",
+          "body": {
+            "id": 8,
+            "title": "Camylle",
+            "description": "earum quia quae",
+            "image": "195.240.171.21",
+            "userId": 1
+          }
+        },
+        {
+          "name": "ErrDataMiss",
+          "statusCode": "400",
+          "body": {
+            "message": [
+              "title must be a string",
+              "description must be a string"
+            ],
+            "error": "Bad Request",
+            "statusCode": 400
+          }
+        }
+      ]
+    }
+  },
+  "ad/:id": {
+    "GET": {
+      "nameResponse": "getById",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "getById",
+          "statusCode": "200",
+          "body": {
+            "id": 5,
+            "title": "Jeffery",
+            "description": "qui reiciendis dolores",
+            "image": "2.179.154.166",
+            "userId": 1
+          }
+        },
+        {
+          "name": "ErrAdDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Ad doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        }
+      ]
+    },
+    "PUT": {
+      "nameResponse": "update",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "update",
+          "statusCode": "200",
+          "body": {
+            "id": 2,
+            "title": "Augustine",
+            "description": "repellendus est ut",
+            "image": "201.229.75.139",
+            "userId": 1
+          }
+        },
+        {
+          "name": "ErrAdDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Ad doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "ErrDataMiss",
+          "statusCode": "400",
+          "body": {
+            "message": [
+              "title must be a string",
+              "description must be a string"
+            ],
+            "error": "Bad Request",
+            "statusCode": 400
+          }
+        }
+      ]
+    },
+    "DELETE": {
+      "nameResponse": "delete",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "delete",
+          "statusCode": "200",
+          "body": {
+            "id": 3,
+            "title": "ejem32",
+            "description": "ejem 2",
+            "image": null,
+            "userId": 1
+          }
+        },
+        {
+          "name": "ErrAdDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Ad doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        }
+      ]
+    }
+  }
+}

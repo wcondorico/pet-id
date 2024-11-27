@@ -1,0 +1,72 @@
+{
+  "user": {
+    "GET": {
+      "nameResponse": "getAll",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "getAll",
+          "statusCode": "200",
+          "body": [
+            {
+              "id": 1,
+              "name": "prueba",
+              "lastName": "prueba ap",
+              "address": "Pjs. 12415",
+              "email": "prueba@gmail.com",
+              "password": "$argon2id$v=19$m=65536,t=3,p=4$m6ma4JsNl9s881x6OEl20w$OlfhVJveRIO2IXs0en0Wp+l5taHw8Oca0UbPchpnfNs",
+              "phone": "789456123",
+              "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$2ZWwzCEVnu+PSk+8kMPU2g$m/EcbU/kupgamz3m9WN81CBK+O2JunxPVFIuTqo1Exw"
+            },
+            {
+              "id": 2,
+              "name": "222",
+              "lastName": "2222",
+              "address": "2222 12312",
+              "email": "prueba2@gmail.com",
+              "password": "$argon2id$v=19$m=65536,t=3,p=4$eYK1+IL7zx4qe472DAksHg$YLMJeqqzeq2tffAyxRo3hFkFICF9L6tqpJVc5IzbRl4",
+              "phone": "143246346",
+              "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$O/pCNNCgw43dZoPV7RXowQ$60VbUfg8QzpnCoGwQJKGCfpXC1LbC7/RXMWOLOEoMNg"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "user/:id": {
+    "GET": {
+      "nameResponse": "getById",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "getById",
+          "statusCode": "200",
+          "body": {
+            "id": 1,
+            "name": "prueba",
+            "lastName": "prueba ap",
+            "address": "Pjs. 12415",
+            "email": "prueba@gmail.com",
+            "password": "$argon2id$v=19$m=65536,t=3,p=4$m6ma4JsNl9s881x6OEl20w$OlfhVJveRIO2IXs0en0Wp+l5taHw8Oca0UbPchpnfNs",
+            "phone": "789456123",
+            "refreshToken": "$argon2id$v=19$m=65536,t=3,p=4$2ZWwzCEVnu+PSk+8kMPU2g$m/EcbU/kupgamz3m9WN81CBK+O2JunxPVFIuTqo1Exw"
+          }
+        }
+      ]
+    }
+  }
+}

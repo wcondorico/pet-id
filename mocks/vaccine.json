@@ -1,0 +1,243 @@
+{
+  "pet/:petId/vaccine": {
+    "GET": {
+      "nameResponse": "getAll",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "getAll",
+          "statusCode": "200",
+          "body": [
+            {
+              "id": 4,
+              "name": "Otto",
+              "date": "2023-11-26T15:30:00.000Z",
+              "nextDueDate": "2023-11-26T15:30:00.000Z",
+              "note": "voluptate tempore itaque",
+              "petId": 9,
+              "petAdoptionId": null
+            },
+            {
+              "id": 5,
+              "name": "Karina",
+              "date": "2023-11-26T15:30:00.000Z",
+              "nextDueDate": "2023-11-26T15:30:00.000Z",
+              "note": "cum tempora quo",
+              "petId": 9,
+              "petAdoptionId": null
+            }
+          ]
+        }
+      ]
+    },
+    "POST": {
+      "nameResponse": "Created",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "Created",
+          "statusCode": "201",
+          "body": {
+            "id": 6,
+            "name": "Matteo",
+            "date": "2023-11-26T15:30:00.000Z",
+            "nextDueDate": "2023-11-26T15:30:00.000Z",
+            "note": "soluta sit est",
+            "petId": 9,
+            "petAdoptionId": null
+          }
+        },
+        {
+          "name": "ErrDataMiss",
+          "statusCode": "400",
+          "body": {
+            "message": [
+              "name must be a string",
+              "date must be a valid ISO 8601 date string"
+            ],
+            "error": "Bad Request",
+            "statusCode": 400
+          }
+        }
+      ]
+    }
+  },
+  "pet/:petId/vaccine/:vaccine": {
+    "GET": {
+      "nameResponse": "getByPetIdByVaccineId",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "VaccineDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Vaccine doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "getByPetIdByVaccineId",
+          "statusCode": "200",
+          "body": {
+            "id": 4,
+            "name": "Otto",
+            "date": "2023-11-26T15:30:00.000Z",
+            "nextDueDate": "2023-11-26T15:30:00.000Z",
+            "note": "voluptate tempore itaque",
+            "petId": 9,
+            "petAdoptionId": null
+          }
+        }
+      ]
+    },
+    "PUT": {
+      "nameResponse": "update",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "VaccineDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Vaccine doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "ErrDataMiss",
+          "statusCode": "400",
+          "body": {
+            "message": [
+              "name must be a string",
+              "date must be a valid ISO 8601 date string"
+            ],
+            "error": "Bad Request",
+            "statusCode": 400
+          }
+        },
+        {
+          "name": "update",
+          "statusCode": "200",
+          "body": {
+            "id": 5,
+            "name": "Kara",
+            "date": "2023-11-26T15:30:00.000Z",
+            "nextDueDate": "2023-11-26T15:30:00.000Z",
+            "note": "nesciunt repudiandae et",
+            "petId": 9,
+            "petAdoptionId": null
+          }
+        }
+      ]
+    },
+    "DELETE": {
+      "nameResponse": "delete",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "VaccineDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Vaccine doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "delete",
+          "statusCode": "200",
+          "body": {
+            "id": 6,
+            "name": "Matteo",
+            "date": "2023-11-26T15:30:00.000Z",
+            "nextDueDate": "2023-11-26T15:30:00.000Z",
+            "note": "soluta sit est",
+            "petId": 9,
+            "petAdoptionId": null
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "petAdoption": {
+    "GET": {
+      "nameResponse": "getAll",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "getAll",
+          "statusCode": "200",
+          "body": [
+            {
+              "id": 3,
+              "name": "ASDGASDGASDGASEGASEG",
+              "lastName": "ASEDGASEGASEGASGEASEG",
+              "age": 0,
+              "description": "asegsegasegasegasegaseg",
+              "image": "ASDGADGASDGASEDGAS",
+              "adoptionStatus": false,
+              "sterilizedStatus": false,
+              "handicappedStatus": false,
+              "userId": 1,
+              "genderId": 2,
+              "specieId": 2,
+              "raceId": 6
+            },
+            {
+              "id": 1,
+              "name": "asdads",
+              "lastName": "asdasd",
+              "age": 0,
+              "description": "asegsegasegasegasegaseg",
+              "image": "asdas",
+              "adoptionStatus": true,
+              "sterilizedStatus": true,
+              "handicappedStatus": true,
+              "userId": 1,
+              "genderId": 2,
+              "specieId": 2,
+              "raceId": 7
+            }
+          ]
+        }
+      ]
+    },
+    "POST": {
+      "nameResponse": "Created",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "ErrDataMiss",
+          "statusCode": "400",
+          "body": {
+            "message": [
+              "name must be a string",
+              "age must be a number conforming to the specified constraints",
+              "adoptionStatus must be a boolean value",
+              "sterilizedStatus must be a boolean value",
+              "handicappedStatus must be a boolean value",
+              "genderId must be a number conforming to the specified constraints",
+              "specieId must be a number conforming to the specified constraints",
+              "raceId must be a number conforming to the specified constraints"
+            ],
+            "error": "Bad Request",
+            "statusCode": 400
+          }
+        },
+        {
+          "name": "Created",
+          "statusCode": "201",
+          "body": {
+            "id": 4,
+            "name": "Kieran",
+            "lastName": "Adams",
+            "age": 315,
+            "description": "eius odio consectetur",
+            "image": "172.199.222.213",
+            "adoptionStatus": false,
+            "sterilizedStatus": false,
+            "handicappedStatus": true,
+            "userId": 1,
+            "genderId": 1,
+            "specieId": 1,
+            "raceId": 3
+          }
+        }
+      ]
+    }
+  },
+  "petAdoption/:id": {
+    "GET": {
+      "nameResponse": "getById",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "ErrPetAdoptionDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "PetAdoption doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "getById",
+          "statusCode": "200",
+          "body": {
+            "id": 3,
+            "name": "ASDGASDGASDGASEGASEG",
+            "lastName": "ASEDGASEGASEGASGEASEG",
+            "age": 0,
+            "description": "asegsegasegasegasegaseg",
+            "image": "ASDGADGASDGASEDGAS",
+            "adoptionStatus": false,
+            "sterilizedStatus": false,
+            "handicappedStatus": false,
+            "userId": 1,
+            "genderId": 2,
+            "specieId": 2,
+            "raceId": 6
+          }
+        }
+      ]
+    },
+    "PUT": {
+      "nameResponse": "update",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "ErrPetAdoptionDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "PetAdoption doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "ErrDataMiss",
+          "statusCode": "400",
+          "body": {
+            "message": [
+              "name must be a string",
+              "age must be a number conforming to the specified constraints",
+              "adoptionStatus must be a boolean value",
+              "sterilizedStatus must be a boolean value",
+              "handicappedStatus must be a boolean value",
+              "genderId must be a number conforming to the specified constraints",
+              "specieId must be a number conforming to the specified constraints",
+              "raceId must be a number conforming to the specified constraints"
+            ],
+            "error": "Bad Request",
+            "statusCode": 400
+          }
+        },
+        {
+          "name": "update",
+          "statusCode": "200",
+          "body": {
+            "id": 3,
+            "name": "Austyn",
+            "lastName": "Fay",
+            "age": 772,
+            "description": "sit officia qui",
+            "image": "160.140.160.47",
+            "adoptionStatus": false,
+            "sterilizedStatus": true,
+            "handicappedStatus": false,
+            "userId": 1,
+            "genderId": 1,
+            "specieId": 1,
+            "raceId": 3
+          }
+        }
+      ]
+    },
+    "DELETE": {
+      "nameResponse": "delete",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "ErrPetAdoptionDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "PetAdoption doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "delete",
+          "statusCode": "200",
+          "body": {
+            "id": 1,
+            "name": "asdads",
+            "lastName": "asdasd",
+            "age": 0,
+            "description": "asegsegasegasegasegaseg",
+            "image": "asdas",
+            "adoptionStatus": true,
+            "sterilizedStatus": true,
+            "handicappedStatus": true,
+            "userId": 1,
+            "genderId": 2,
+            "specieId": 2,
+            "raceId": 7
+          }
+        }
+      ]
+    }
+  }
+}

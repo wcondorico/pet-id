@@ -1,0 +1,239 @@
+{
+  "petLoss": {
+    "GET": {
+      "nameResponse": "getAll",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "getAll",
+          "statusCode": "200",
+          "body": [
+            {
+              "id": 3,
+              "description": "string",
+              "location": "string",
+              "dateLoss": "2024-11-27T02:38:58.579Z",
+              "reward": "string",
+              "petId": 9
+            },
+            {
+              "id": 1,
+              "description": "string",
+              "location": "string",
+              "dateLoss": "2024-11-27T02:38:58.579Z",
+              "reward": "string",
+              "petId": 7
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "petLoss/pet/:petId": {
+    "POST": {
+      "nameResponse": "Created",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "PetLoss whit that id already exists",
+          "statusCode": "409",
+          "body": {
+            "message": "PetLoss whit that id already exists",
+            "error": "Conflict",
+            "statusCode": 409
+          }
+        },
+        {
+          "name": "Created",
+          "statusCode": "201",
+          "body": {
+            "id": 4,
+            "description": "nihil enim ut",
+            "location": "28989 Hane Village",
+            "dateLoss": "2023-11-26T15:30:00.000Z",
+            "reward": "212.76",
+            "petId": 22
+          }
+        },
+        {
+          "name": "ErrDataMiss",
+          "statusCode": "400",
+          "body": {
+            "message": [
+              "description must be a string",
+              "location must be a string",
+              "dateLoss must be a valid ISO 8601 date string"
+            ],
+            "error": "Bad Request",
+            "statusCode": 400
+          }
+        }
+      ]
+    },
+    "GET": {
+      "nameResponse": "getByPetId",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "PetLossDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "PetLoss doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "getByPetId",
+          "statusCode": "200",
+          "body": {
+            "id": 3,
+            "description": "string",
+            "location": "string",
+            "dateLoss": "2024-11-27T02:38:58.579Z",
+            "reward": "string",
+            "petId": 9
+          }
+        }
+      ]
+    },
+    "PUT": {
+      "nameResponse": "update",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "PetLossDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "PetLoss doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "ErrDataMiss",
+          "statusCode": "400",
+          "body": {
+            "message": [
+              "description must be a string",
+              "location must be a string",
+              "dateLoss must be a valid ISO 8601 date string"
+            ],
+            "error": "Bad Request",
+            "statusCode": 400
+          }
+        },
+        {
+          "name": "update",
+          "statusCode": "200",
+          "body": {
+            "id": 4,
+            "description": "nulla architecto quia",
+            "location": "28159 Bernier Track",
+            "dateLoss": "2023-11-26T15:30:00.000Z",
+            "reward": "273.28",
+            "petId": 22
+          }
+        }
+      ]
+    },
+    "DELETE": {
+      "nameResponse": "delete",
+      "responses": [
+        {
+          "name": "Unauthorized",
+          "statusCode": "401",
+          "body": {
+            "message": "Unauthorized",
+            "statusCode": 401
+          }
+        },
+        {
+          "name": "PetDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "Pet doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "PetLossDoesn'tExist",
+          "statusCode": "404",
+          "body": {
+            "message": "PetLoss doesn't exists",
+            "error": "Not Found",
+            "statusCode": 404
+          }
+        },
+        {
+          "name": "delete",
+          "statusCode": "200",
+          "body": {
+            "id": 1,
+            "description": "string",
+            "location": "string",
+            "dateLoss": "2024-11-27T02:38:58.579Z",
+            "reward": "string",
+            "petId": 7
+          }
+        }
+      ]
+    }
+  }
+}
