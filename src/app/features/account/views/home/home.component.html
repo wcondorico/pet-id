@@ -8,16 +8,13 @@
       <input type="text" placeholder="Buscar cosas aqui" />
     </div>
     <div class="container__card">
-      <app-card-button [icon]="'edit'">
-        <span>Editar perfil</span>
+      <app-card-button title="Editar perfil" icon="edit">
       </app-card-button>
-      <app-card-button [icon]="'pets'">
-        <span>Ver mascotas</span>
+      <app-card-button title="Ver mascotas" icon="pets">
       </app-card-button>
     </div>
     <div class="container__config">
-      <app-card-options [items]="list()">
-        <span>Cuenta</span>
+      <app-card-options title="Cuenta" [items]="list()">
       </app-card-options>
     </div>
   </div>

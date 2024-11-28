@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
-import { TitleComponent } from '../../../../core/components/title/title.component';
 import { CardButtonComponent } from '../../../../core/components/card/card-button/card-button.component';
 import { CardOptionsComponent } from '../../../../core/components/card/card-options/card-options.component';
+import { TitleComponent } from '../../../../core/components/title/title.component';
 
 @Component({
   selector: 'app-home',

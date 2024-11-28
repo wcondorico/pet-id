@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './account.component.scss'
 })
 export class AccountComponent {
-  profileIsActived = signal(true);
+  profileIsActived = signal(false);
   pruebita = true;
   profileActived(): void {
     this.profileIsActived.set(!this.profileIsActived())
