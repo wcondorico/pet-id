@@ -695,12 +695,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/petLoss",
+							"raw": "{{baseUrl}}/pet-loss",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"petLoss"
+								"pet-loss"
 							]
 						}
 					},
@@ -712,12 +712,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/petLoss/pet/{{$randomInt}}",
+							"raw": "{{baseUrl}}/pet-loss/pet/{{$randomInt}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"petLoss",
+								"pet-loss",
 								"pet",
 								"{{$randomInt}}"
 							]
@@ -740,12 +740,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/petLoss/pet/{{$randomInt}}",
+							"raw": "{{baseUrl}}/pet-loss/pet/{{$randomInt}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"petLoss",
+								"pet-loss",
 								"pet",
 								"{{$randomInt}}"
 							]
@@ -768,12 +768,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/petLoss/pet/{{$randomInt}}",
+							"raw": "{{baseUrl}}/pet-loss/pet/{{$randomInt}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"petLoss",
+								"pet-loss",
 								"pet",
 								"{{$randomInt}}"
 							]
@@ -796,12 +796,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/petLoss/pet/{{$randomInt}}",
+							"raw": "{{baseUrl}}/pet-loss/pet/{{$randomInt}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"petLoss",
+								"pet-loss",
 								"pet",
 								"{{$randomInt}}"
 							]
@@ -862,12 +862,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/petAdoption",
+							"raw": "{{baseUrl}}/pet-adoption",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"petAdoption"
+								"pet-adoption"
 							]
 						}
 					},
@@ -879,12 +879,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/petAdoption/{{$randomInt}}",
+							"raw": "{{baseUrl}}/pet-adoption/{{$randomInt}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"petAdoption",
+								"pet-adoption",
 								"{{$randomInt}}"
 							]
 						}
@@ -906,12 +906,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/petAdoption",
+							"raw": "{{baseUrl}}/pet-adoption",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"petAdoption"
+								"pet-adoption"
 							]
 						}
 					},
@@ -932,12 +932,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/petAdoption/{{$randomInt}}",
+							"raw": "{{baseUrl}}/pet-adoption/{{$randomInt}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"petAdoption",
+								"pet-adoption",
 								"{{$randomInt}}"
 							]
 						}
@@ -959,12 +959,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/petAdoption/{{$randomInt}}",
+							"raw": "{{baseUrl}}/pet-adoption/{{$randomInt}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"petAdoption",
+								"pet-adoption",
 								"{{$randomInt}}"
 							]
 						}
