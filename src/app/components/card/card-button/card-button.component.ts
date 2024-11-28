@@ -7,6 +7,6 @@ import { Component, input } from '@angular/core';
   styleUrl: './card-button.component.scss'
 })
 export class CardButtonComponent {
-  icon = input.required();
-  title = input.required();
+  icon = input.required<string>();
+  title = input.required<string>();
 }

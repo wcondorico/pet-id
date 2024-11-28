@@ -1,19 +1,22 @@
 import { Component, signal } from '@angular/core';
-import { CardButtonComponent } from '../../../../core/components/card/card-button/card-button.component';
-import { CardOptionsComponent } from '../../../../core/components/card/card-options/card-options.component';
-import { TitleComponent } from '../../../../core/components/title/title.component';
+import { CardButtonComponent } from '../../../../components/card/card-button/card-button.component';
+import { CardOptionsComponent } from '../../../../components/card/card-options/card-options.component';
+import { TitleComponent } from '../../../../components/title/title.component';
+import { AccountOption } from '../../core/interfaces/account.interface';
 
 @Component({
   selector: 'app-home',
-  imports: [TitleComponent, CardButtonComponent, CardOptionsComponent],
+  imports: [ TitleComponent, CardButtonComponent, CardOptionsComponent ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  list = signal([
-    {icon:'pets', text:'Mis mascotas'},
-    {icon:'pets', text:'Anuncios'},
-    {icon:'pets', text:'Adopción'},
-    {icon:'pets', text:'Eliminar cuenta'}
-  ]);
+  options = signal<AccountOption[]>(
+    [
+      { icon: 'pets', text: 'Mis mascotas' },
+      { icon: 'event', text: 'Mis anuncios' },
+      { icon: 'volunteer_activism', text: 'Adopción' },
+      { icon: 'close', text: 'Eliminar cuenta' }
+    ]
+  );
 }

@@ -1,111 +1,96 @@
-:host {
-  * {
-    box-sizing: border-box;
-  }
+.main-container {
+  background-color: #bbcdce;
+  height: 100%;
 
-  .main-container {
-    width: 100%;
-    background-color: #bbcdce;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 80px;
+    align-items: center;
+    height: 100px;
+    background: linear-gradient(to right, #D2E5E0, #C8EBEF);
 
-    .header {
-      width: 100%;
+    &__logo {
       display: flex;
-      justify-content: space-between;
-      padding: 0 80px;
       align-items: center;
-      height: 100px;
-      background: linear-gradient(to right, #D2E5E0, #C8EBEF);
+      gap: 15px;
 
-      &__logo {
-        width: 120px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-
-        & > img {
-          width: 55px;
-        }
-
-        & > span {
-          font-size: 34px;
-          font-weight: 700;
-          color: #45474F;
-        }
-      }
-
-      &__profile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        width: 100px;
-        background-color: transparent;
-        border: none;
-        height: 35px;
-        cursor: pointer;
+      & > p {
+        font-size: 34px;
+        font-weight: 900;
+        color: #45474F;
         position: relative;
-
-        & .dropdown {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-
-          &__avatar {
-            font-size: 30px;
-            color: #783CAC;
-          }
-
-          & > div {
-            display: flex;
-            gap: 2px;
-            align-items: center;
-
-            & .icon {
-              margin-top: 2px;
-            }
-          }
-        }
-
-
-        & .options {
-          $primary-color: #D2E5E0;
-          $primary-color-hover: #b3c2be;
-          width: 250px;
-          background-color: $primary-color;
-          position: absolute;
-          top: 70px;
-          right: 5px;
-          border-radius: 10px;
-
-          & > ul {
-            display: flex;
-            flex-direction: column;
-            list-style: none;
-            margin: 0;
-            padding: 10px 0;
-
-            & > li {
-              padding: 10px 25px;
-              font-size: 18px;
-
-              &:hover {
-                background-color: $primary-color-hover;
-              }
-            }
-          }
-
-        }
       }
-
     }
 
-    .footer {
-      bottom: 0;
-      width: 100%;
-      height: 150px;
-      background: linear-gradient(to right, #FFD8E0, #F9ECEF);
+    &__profile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      position: relative;
+
+      & .dropdown {
+        display: flex;
+        align-items: center;
+
+        &__avatar {
+          font-size: 30px;
+          color: #424242;
+        }
+
+        & > div {
+          display: flex;
+          gap: 2px;
+          align-items: center;
+
+          & .icon {
+            margin-top: 2px;
+          }
+        }
+      }
+
+      & .options {
+        width: 170px;
+        background-color: #D2E5E0;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        border-radius: 10px;
+
+        & > ul {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          list-style: none;
+          margin: 0;
+          padding: 10px 20px;
+
+          & > li {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 5px;
+            font-size: 15px;
+            font-weight: 500;
+
+            &:hover {
+              background-color: #b3c2be;
+            }
+
+            & > i {
+              font-size: 15px;
+            }
+          }
+        }
+
+      }
     }
 
   }
 }
+
 

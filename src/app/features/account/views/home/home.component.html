@@ -5,17 +5,14 @@
     </div>
     <div class="container__search">
       <i class="material-icons">search</i>
-      <input type="text" placeholder="Buscar cosas aqui" />
+      <input type="text" placeholder="Buscar" />
     </div>
     <div class="container__card">
-      <app-card-button title="Editar perfil" icon="edit">
-      </app-card-button>
-      <app-card-button title="Ver mascotas" icon="pets">
-      </app-card-button>
+      <app-card-button title="Editar perfil" icon="edit"></app-card-button>
+      <app-card-button title="Mis mascotas" icon="pets"></app-card-button>
     </div>
     <div class="container__config">
-      <app-card-options title="Cuenta" [items]="list()">
-      </app-card-options>
+      <app-card-options title="Cuenta" [items]="options()"></app-card-options>
     </div>
   </div>
 </div>

@@ -1,31 +1,29 @@
 <div class="main-container">
   <div class="header">
     <div class="header__logo">
-      <img src="doge.svg" alt="">
-      <span>PetID</span>
+      <img ngSrc="images/doge.svg" alt="" width="55" height="55">
+      <p>PetID</p>
     </div>
-    <button class="header__profile" (click)="profileActived()" >
+    <button class="header__profile" (click)="profileActivated()">
       <div class="dropdown">
-        <i class="material-icons dropdown__avatar">pets</i>
-        <div>
-          @if (profileIsActived()) {
-            <i class="material-icons icon">keyboard_arrow_down</i>
-          }
-          @else {
-            <i class="material-icons icon">keyboard_arrow_right</i>
-          }
-        </div>
+        <i class="material-icons dropdown__avatar">manage_accounts</i>
+        <i class="material-icons icon">keyboard_arrow_down</i>
       </div>
-      @if (profileIsActived()) {
+      @if (profileIsActivated()) {
         <div class="options">
           <ul>
-            <li>Cerrar sesión</li>
+            <li>
+              <i class="material-icons">person</i>
+              Cuenta
+            </li>
+            <li>
+              <i class="material-icons">settings</i>
+              Cerrar sesión
+            </li>
           </ul>
         </div>
       }
     </button>
   </div>
   <router-outlet></router-outlet>
-  <div class="footer">
-  </div>
 </div>
