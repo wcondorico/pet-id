@@ -8,4 +8,5 @@ import { Component, input } from '@angular/core';
 })
 export class CardButtonComponent {
   icon = input.required();
+  title = input.required();
 }
