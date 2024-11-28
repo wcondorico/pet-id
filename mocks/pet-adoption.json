@@ -1,5 +1,5 @@
 {
-  "petAdoption": {
+  "pet-adoption": {
     "GET": {
       "nameResponse": "getAll",
       "responses": [
@@ -100,7 +100,7 @@
       ]
     }
   },
-  "petAdoption/:id": {
+  "pet-adoption/:id": {
     "GET": {
       "nameResponse": "getById",
       "responses": [

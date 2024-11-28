@@ -1,5 +1,5 @@
 {
-  "petLoss": {
+  "pet-loss": {
     "GET": {
       "nameResponse": "getAll",
       "responses": [
@@ -36,7 +36,7 @@
       ]
     }
   },
-  "petLoss/pet/:petId": {
+  "pet-loss/pet/:petId": {
     "POST": {
       "nameResponse": "Created",
       "responses": [
