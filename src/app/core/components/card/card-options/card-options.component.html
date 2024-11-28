@@ -1,1 +1,16 @@
-<p>card-options works!</p>
+<span><ng-content select="span"></ng-content></span>
+<ul>
+  @for (item of items; track $index) {
+    <li>
+      <div class="left">
+        <div>
+          <i class="material-icons">{{item.icon}}</i>
+        </div>
+        <span>{{item.text}}</span>
+      </div>
+      <div class="right">
+        <i class="material-icons">arrow_forward_ios</i>
+      </div>
+    </li>
+  }
+</ul>

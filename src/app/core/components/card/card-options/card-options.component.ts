@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-options',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './card-options.component.scss'
 })
 export class CardOptionsComponent {
-
+  @Input() items!: {icon:string; text:string}[];
 }
