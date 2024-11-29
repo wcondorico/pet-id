@@ -1,16 +1,16 @@
-<app-subtitle>{{ title() }}</app-subtitle>
-<ul>
-  @for (item of items(); track $index) {
-    <li>
-      <div class="left">
-        <div>
+<section class="card-options">
+  <app-subtitle class="card-options__title">{{ title() }}</app-subtitle>
+  <ul>
+    @for (item of items(); track $index) {
+      <li>
+        <div class="left">
           <i class="material-icons">{{ item.icon }}</i>
+          <p>{{ item.text }}</p>
         </div>
-        <p>{{ item.text }}</p>
-      </div>
-      <div class="right">
-        <i class="material-icons">arrow_forward_ios</i>
-      </div>
-    </li>
-  }
-</ul>
+        <div class="right">
+          <i class="material-icons">arrow_forward_ios</i>
+        </div>
+      </li>
+    }
+  </ul>
+</section>

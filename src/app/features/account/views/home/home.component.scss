@@ -1,67 +1,53 @@
-:host {
-  .home {
-    display: flex;
-    justify-content: center;
-    padding: 40px 0;
+.home {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
 
-    .container {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    border-radius: 10px;
+    padding: 25px;
+    gap: 25px;
+
+    &__name {
       display: flex;
-      flex-direction: column;
       width: 700px;
       border-radius: 10px;
-      padding: 25px;
-      gap: 25px;
-      $primary-color-bold: #bbcdce;
-      $primary-color: #d7ebec;
-      $secondary-color: #c8ebef;
+      flex-direction: column;
+    }
 
-      &__search {
-        width: 665px;
-        height: 50px;
-        background-color: $primary-color;
-        border-radius: 10px;
-        display: flex;
-        padding: 0 15px;
-        gap: 10px;
-        align-items: center;
-        border: #cfd4d4 solid 2.5px;
+    &__search {
+      width: 665px;
+      height: 50px;
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      padding: 0 15px;
+      gap: 10px;
+      align-items: center;
+      border: #cfd4d4 solid 2.5px;
 
-        & > i {
-          font-size: 32px;
-        }
+      & > i {
+        font-size: 32px;
+      }
 
-        & input {
-          background-color: transparent;
-          border: 0;
-          font-size: 20px;
-          &:focus {
-            outline: none;
-          }
+      & input {
+        background-color: transparent;
+        border: 0;
+        font-size: 20px;
+
+        &:focus {
+          outline: none;
         }
       }
+    }
 
-      &__name {
-        display: flex;
-        width: 700px;
-        border-radius: 10px;
-        flex-direction: column;
-      }
-
-      &__card {
-        display: flex;
-        width: 700px;
-        gap: 20px;
-      }
-
-      &__config {
-        display: flex;
-        background-color: $primary-color;
-        border-radius: 10px;
-        width: 700px;
-        flex-direction: column;
-        padding-top: 20px;
-        padding-bottom: 10px;
-      }
+    &__options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
   }
 }

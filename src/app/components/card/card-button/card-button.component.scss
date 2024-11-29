@@ -1,8 +1,8 @@
-:host {
+.card-button {
   display: flex;
   width: 100%;
   height: 115px;
-  background-color: #d7ebec;
+  background-color: #656565;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
@@ -12,18 +12,18 @@
   cursor: pointer;
 
   &:hover {
-    background-color: #c8ebef;
+    background-color: #282828;
     transform: scale(1.05);
   }
 
   & > i {
     font-size: 32px;
-    color: #92949f;
+    color: white;
   }
 
   & > p {
     margin: 0;
-    color: #92949f;
+    color: white;
     font-weight: 700;
   }
 

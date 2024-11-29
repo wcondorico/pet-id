@@ -4,19 +4,7 @@ import { accountRoutes } from './account.routes';
 
 @NgModule({
   providers: [
-    provideRouter(accountRoutes),
-    /*{
-      provide: ReferenceFacade,
-      useClass: ReferenceHttp
-    },
-    {
-      provide: TagFacade,
-      useClass: TagHttp
-    },
-    {
-      provide: AuthorFacade,
-      useClass: AuthorsHttp
-    }*/
+    provideRouter(accountRoutes)
   ]
 })
 export class AccountModule { }

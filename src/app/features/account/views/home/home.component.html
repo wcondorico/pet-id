@@ -1,18 +1,19 @@
 <div class="home">
   <div class="container">
     <div class="container__name">
-      <app-title>William</app-title>
+      <app-title>Hola William</app-title>
     </div>
+
     <div class="container__search">
       <i class="material-icons">search</i>
       <input type="text" placeholder="Buscar" />
     </div>
-    <div class="container__card">
+
+    <div class="container__options">
       <app-card-button title="Editar perfil" icon="edit"></app-card-button>
       <app-card-button title="Mis mascotas" icon="pets"></app-card-button>
     </div>
-    <div class="container__config">
-      <app-card-options title="Cuenta" [items]="options()"></app-card-options>
-    </div>
+
+    <app-card-options title="Cuenta" [items]="options()"></app-card-options>
   </div>
 </div>
