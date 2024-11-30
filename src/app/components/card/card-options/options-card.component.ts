@@ -3,12 +3,12 @@ import { SubtitleComponent } from '../../subtitle/subtitle.component';
 import { AccountOption } from '../../../features/account/core/interfaces/account.interface';
 
 @Component({
-  selector: 'app-card-options',
+  selector: 'app-options-card',
   imports: [ SubtitleComponent ],
-  templateUrl: './card-options.component.html',
-  styleUrl: './card-options.component.scss'
+  templateUrl: './options-card.component.html',
+  styleUrl: './options-card.component.scss'
 })
-export class CardOptionsComponent {
+export class OptionsCardComponent {
   items = input.required<AccountOption[]>();
   title = input.required<string>();
 }

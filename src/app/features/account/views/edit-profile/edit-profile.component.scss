@@ -1,1 +1,11 @@
+.edit {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
 
+  .container {
+    display: flex;
+    width: 700px;
+    gap: 25px;
+  }
+}

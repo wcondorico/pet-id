@@ -1,13 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { CardButtonComponent } from '../../../../components/card/card-button/card-button.component';
-import { CardOptionsComponent } from '../../../../components/card/card-options/card-options.component';
+import { RouterModule } from '@angular/router';
+import { ButtonCardComponent } from '../../../../components/card/button-card/button-card.component';
+import { OptionsCardComponent } from '../../../../components/card/card-options/options-card.component';
 import { TitleComponent } from '../../../../components/title/title.component';
 import { AccountOption } from '../../core/interfaces/account.interface';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
-  imports: [ TitleComponent, CardButtonComponent, CardOptionsComponent, RouterModule ],
+  imports: [ TitleComponent, ButtonCardComponent, OptionsCardComponent, RouterModule ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
 })
