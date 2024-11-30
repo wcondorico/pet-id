@@ -3,9 +3,7 @@ import { RouterModule } from '@angular/router';
 import { TitleComponent } from '@components/title/title.component';
 import { ButtonCardComponent } from '@components/card/button-card/button-card.component';
 import { OptionsCardComponent } from '@components/card/card-options/options-card.component';
-
-class AccountOption {
-}
+import { CardOption } from '@components/card/card-options/interfaces/card-option.interface';
 
 @Component({
   selector: 'app-profile',
@@ -14,7 +12,7 @@ class AccountOption {
   styleUrl: './profile.component.scss',
 })
 export class ProfileComponent {
-  options = signal<AccountOption[]>(
+  options = signal<CardOption[]>(
     [
       { icon: 'pets', text: 'Mis mascotas' },
       { icon: 'event', text: 'Mis anuncios' },
