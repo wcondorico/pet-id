@@ -9,6 +9,6 @@ import { AccountOption } from '../../../features/account/core/interfaces/account
   styleUrl: './card-options.component.scss'
 })
 export class CardOptionsComponent {
-  items = input<AccountOption[]>([]);
+  items = input.required<AccountOption[]>();
   title = input.required<string>();
 }

@@ -1,4 +1,4 @@
-<div class="home">
+<div class="profile">
   <div class="container">
     <div class="container__name">
       <app-title>Hola William</app-title>
@@ -10,7 +10,9 @@
     </div>
 
     <div class="container__options">
-      <app-card-button title="Editar perfil" icon="edit"></app-card-button>
+      <a [routerLink]="['../edit-profile']">
+        <app-card-button title="Editar perfil" icon="edit"></app-card-button>
+      </a>
       <app-card-button title="Mis mascotas" icon="pets"></app-card-button>
     </div>
 

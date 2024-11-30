@@ -3,14 +3,15 @@ import { CardButtonComponent } from '../../../../components/card/card-button/car
 import { CardOptionsComponent } from '../../../../components/card/card-options/card-options.component';
 import { TitleComponent } from '../../../../components/title/title.component';
 import { AccountOption } from '../../core/interfaces/account.interface';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  imports: [ TitleComponent, CardButtonComponent, CardOptionsComponent ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  selector: 'app-profile',
+  imports: [ TitleComponent, CardButtonComponent, CardOptionsComponent, RouterModule ],
+  templateUrl: './profile.component.html',
+  styleUrl: './profile.component.scss',
 })
-export class HomeComponent {
+export class ProfileComponent {
   options = signal<AccountOption[]>(
     [
       { icon: 'pets', text: 'Mis mascotas' },

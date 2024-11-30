@@ -1,4 +1,4 @@
-.home {
+.profile {
   display: flex;
   justify-content: center;
   padding: 40px 0;
@@ -48,6 +48,10 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+
+      & > a {
+        text-decoration: none;
+      }
     }
   }
 }

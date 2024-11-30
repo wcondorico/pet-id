@@ -7,12 +7,16 @@ export const accountRoutes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'profile',
         pathMatch: "full"
       },
       {
-        path: 'home',
-        loadComponent: () => import('./views/home/home.component').then(c => c.HomeComponent)
+        path: 'profile',
+        loadComponent: () => import('./views/profile/profile.component').then(c => c.ProfileComponent)
+      },
+      {
+        path: 'edit-profile',
+        loadComponent: () => import('./views/edit-profile/edit-profile.component').then(c => c.EditProfileComponent)
       }
     ]
   }
