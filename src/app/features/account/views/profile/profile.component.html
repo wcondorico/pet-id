@@ -1,21 +1,17 @@
 <div class="profile">
-  <div class="container">
-    <div class="container__name">
-      <app-title>Hola William</app-title>
-    </div>
+  <app-title>Hola William</app-title>
 
-    <div class="container__search">
-      <i class="material-icons">search</i>
-      <input type="text" placeholder="Buscar" />
-    </div>
-
-    <div class="container__options">
-      <a [routerLink]="['../edit-profile']">
-        <app-button-card title="Editar perfil" icon="edit"></app-button-card>
-      </a>
-      <app-button-card title="Mis mascotas" icon="pets"></app-button-card>
-    </div>
-
-    <app-options-card title="Cuenta" [items]="options()"></app-options-card>
+  <div class="profile__search">
+    <i class="material-icons">search</i>
+    <input type="text" placeholder="Buscar"/>
   </div>
+
+  <div class="profile__options">
+    <a [routerLink]="['../edit-profile']">
+      <app-button-card title="Editar perfil" icon="edit"></app-button-card>
+    </a>
+    <app-button-card title="Mis mascotas" icon="pets"></app-button-card>
+  </div>
+
+  <app-options-card title="Cuenta" [items]="options()"></app-options-card>
 </div>

@@ -1,8 +1,8 @@
-.main-container {
+.account {
   background-color: #121212;
   height: 100%;
 
-  .header {
+  &__header {
     display: flex;
     justify-content: space-between;
     padding: 0 80px;
@@ -10,7 +10,7 @@
     height: 100px;
     background: #121212;
 
-    &__logo {
+    &--logo {
       display: flex;
       align-items: center;
       gap: 15px;
@@ -23,7 +23,7 @@
       }
     }
 
-    &__profile {
+    &--profile {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -71,7 +71,13 @@
 
       }
     }
+  }
 
+  &__container {
+    max-width: 700px;
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 35px;
   }
 }
 
