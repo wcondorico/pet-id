@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { IconButtonComponent } from '@components/button/icon-button/icon-button.component';
+import { IconButtonComponent } from '@components/icon-button/icon-button.component';
 import { TitleComponent } from '@components/title/title.component';
 
 @Component({
