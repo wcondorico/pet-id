@@ -33,9 +33,7 @@ module.exports = tseslint.config(
       "@angular-eslint/component-class-suffix": [
         "error",
         {
-          type: "element",
-          suffix: ["Component", "View"],
-          style: "camelCase",
+          suffixes: ["Component", "View"]
         },
       ],
     },
