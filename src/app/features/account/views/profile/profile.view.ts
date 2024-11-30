@@ -9,10 +9,10 @@ import { InputComponent } from '@components/input/input.component';
 @Component({
   selector: 'app-profile',
   imports: [ TitleComponent, ButtonCardComponent, OptionsCardComponent, RouterModule, InputComponent ],
-  templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss',
+  templateUrl: './profile.view.html',
+  styleUrl: './profile.view.scss',
 })
-export class ProfileComponent {
+export class ProfileView {
   options = signal<CardOption[]>(
     [
       { icon: 'pets', text: 'Mis mascotas' },

@@ -12,7 +12,7 @@ export const accountRoutes: Routes = [
       },
       {
         path: 'profile',
-        loadComponent: () => import('./views/profile/profile.component').then(c => c.ProfileComponent)
+        loadComponent: () => import('./views/profile/profile.view').then(c => c.ProfileView)
       },
       {
         path: 'edit-profile',

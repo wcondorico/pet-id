@@ -30,6 +30,14 @@ module.exports = tseslint.config(
           style: "kebab-case",
         },
       ],
+      "@angular-eslint/component-class-suffix": [
+        "error",
+        {
+          type: "element",
+          suffix: ["Component", "View"],
+          style: "camelCase",
+        },
+      ],
     },
   },
   {
