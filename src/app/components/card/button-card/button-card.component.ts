@@ -2,7 +2,6 @@ import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-button-card',
-  imports: [],
   templateUrl: './button-card.component.html',
   styleUrl: './button-card.component.scss'
 })
