@@ -19,9 +19,9 @@
     "target": "ES2022",
     "module": "ES2022",
     "paths": {
-      "@components/*": ["app/components"],
-      "@core/*": ["app/core"],
-      "@features/*": ["app/features"]
+      "@components/*": ["app/components/*"],
+      "@core/*": ["app/core/*"],
+      "@features/*": ["app/features/*"]
     }
   },
   "angularCompilerOptions": {

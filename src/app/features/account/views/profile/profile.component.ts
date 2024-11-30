@@ -1,9 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ButtonCardComponent } from '../../../../components/card/button-card/button-card.component';
-import { OptionsCardComponent } from '../../../../components/card/card-options/options-card.component';
-import { TitleComponent } from '../../../../components/title/title.component';
-import { AccountOption } from '../../core/interfaces/account.interface';
+import { TitleComponent } from '@components/title/title.component';
+import { ButtonCardComponent } from '@components/card/button-card/button-card.component';
+import { OptionsCardComponent } from '@components/card/card-options/options-card.component';
+
+class AccountOption {
+}
 
 @Component({
   selector: 'app-profile',

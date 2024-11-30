@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-account',
-  imports: [ RouterOutlet, CommonModule, NgOptimizedImage ],
+  imports: [ RouterOutlet, NgOptimizedImage ],
   templateUrl: './account.component.html',
   styleUrl: './account.component.scss'
 })

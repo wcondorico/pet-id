@@ -1,6 +1,8 @@
 import { Component, input } from '@angular/core';
-import { SubtitleComponent } from '../../subtitle/subtitle.component';
-import { AccountOption } from '../../../features/account/core/interfaces/account.interface';
+import { SubtitleComponent } from '@components/subtitle/subtitle.component';
+
+class AccountOption {
+}
 
 @Component({
   selector: 'app-options-card',

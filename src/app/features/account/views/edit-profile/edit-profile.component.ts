@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { IconButtonComponent } from 'app/components/button/icon-button/icon-button.component';
-import { TitleComponent } from 'app/components/title/title.component';
+import { IconButtonComponent } from '@components/button/icon-button/icon-button.component';
+import { TitleComponent } from '@components/title/title.component';
 
 @Component({
   selector: 'app-edit-profile',
