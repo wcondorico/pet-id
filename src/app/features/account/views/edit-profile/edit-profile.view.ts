@@ -6,9 +6,9 @@ import { InputComponent } from '@components/input/input.component';
 @Component({
   selector: 'app-edit-profile',
   imports: [ ButtonComponent, TitleComponent, InputComponent ],
-  templateUrl: './edit-profile.component.html',
-  styleUrl: './edit-profile.component.scss'
+  templateUrl: './edit-profile.view.html',
+  styleUrl: './edit-profile.view.scss'
 })
-export class EditProfileComponent {
+export class EditProfileView {
 
 }

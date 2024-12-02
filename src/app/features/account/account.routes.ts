@@ -16,7 +16,11 @@ export const accountRoutes: Routes = [
       },
       {
         path: 'edit-profile',
-        loadComponent: () => import('./views/edit-profile/edit-profile.component').then(c => c.EditProfileComponent)
+        loadComponent: () => import('./views/edit-profile/edit-profile.view').then(c => c.EditProfileView)
+      },
+      {
+        path: 'my-pets',
+        loadComponent: () => import('./views/my-pets/my-pets.view').then(c => c.MyPetsView)
       }
     ]
   }
