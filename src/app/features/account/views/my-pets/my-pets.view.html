@@ -1,1 +1,11 @@
-<p>my-pets works!</p>
+<section class="pets">
+  <app-button icon="arrow_back_ios_new" routerLink="../"></app-button>
+  <app-title>Mis mascotas</app-title>
+  <app-p>
+    dummy text of the printing and typesetting industry. Lorem Ipsum has been
+    the industry's standard dummy text ever since the 1500s
+  </app-p>
+  @for (pet of pets(); track $index) {
+  <app-pet-card img="{{pet.img}}" name="{{pet.name}}"></app-pet-card>
+  }
+</section>

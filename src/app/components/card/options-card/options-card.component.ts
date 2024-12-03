@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { SubtitleComponent } from '@components/subtitle/subtitle.component';
-import { CardOption } from '@components/card/card-options/interfaces/card-option.interface';
+import { OptionCard } from '@components/card/options-card/interfaces/option-card.interface';
 
 @Component({
   selector: 'app-options-card',
@@ -9,6 +9,6 @@ import { CardOption } from '@components/card/card-options/interfaces/card-option
   styleUrl: './options-card.component.scss'
 })
 export class OptionsCardComponent {
-  items = input.required<CardOption[]>();
+  items = input.required<OptionCard[]>();
   title = input.required<string>();
 }

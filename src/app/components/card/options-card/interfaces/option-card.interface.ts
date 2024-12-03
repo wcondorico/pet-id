@@ -1,4 +1,4 @@
-export interface CardOption {
+export interface OptionCard {
   icon: string;
   text: string;
 }
