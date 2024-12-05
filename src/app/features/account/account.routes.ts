@@ -21,6 +21,10 @@ export const accountRoutes: Routes = [
       {
         path: 'my-pets',
         loadComponent: () => import('./views/my-pets/my-pets.view').then(c => c.MyPetsView)
+      },
+      {
+        path: 'adoptions',
+        loadComponent: () => import('./views/adoptions/adoptions.component').then(c => c.AdoptionsComponent)
       }
     ]
   }

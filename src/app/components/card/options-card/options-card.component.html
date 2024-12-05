@@ -2,7 +2,7 @@
   <app-subtitle class="card-options__title">{{ title() }}</app-subtitle>
   <ul>
     @for (item of items(); track $index) {
-      <li>
+      <li [routerLink]="['../',item.route]">
         <div class="left">
           <i class="material-icons">{{ item.icon }}</i>
           <p>{{ item.text }}</p>

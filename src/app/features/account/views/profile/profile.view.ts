@@ -15,10 +15,10 @@ import { InputComponent } from '@components/input/input.component';
 export class ProfileView {
   options = signal<OptionCard[]>(
     [
-      { icon: 'pets', text: 'Mis mascotas' },
-      { icon: 'event', text: 'Mis anuncios' },
-      { icon: 'volunteer_activism', text: 'Adopción' },
-      { icon: 'close', text: 'Eliminar cuenta' }
+      { icon: 'pets', text: 'Mis mascotas', route: 'my-pets' },
+      { icon: 'event', text: 'Mis anuncios', route: '' },
+      { icon: 'volunteer_activism', text: 'Adopción', route: 'adoptions'  },
+      { icon: 'close', text: 'Eliminar cuenta', route: ''  }
     ]
   );
 }
