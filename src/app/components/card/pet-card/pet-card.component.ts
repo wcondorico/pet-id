@@ -11,4 +11,5 @@ import { SubtitleComponent } from "../../subtitle/subtitle.component";
 export class PetCardComponent {
   img = input.required<string>();
   name = input.required<string>();
+  anchor = input<string | undefined>();
 }

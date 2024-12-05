@@ -24,7 +24,11 @@ export const accountRoutes: Routes = [
       },
       {
         path: 'adoptions',
-        loadComponent: () => import('./views/adoptions/adoptions.component').then(c => c.AdoptionsComponent)
+        loadComponent: () => import('./views/adoptions/adoptions.view').then(c => c.AdoptionsView)
+      },
+      {
+        path: 'announcement',
+        loadComponent: () => import('./views/announcement/announcement.view').then(c => c.AnnouncementView)
       }
     ]
   }

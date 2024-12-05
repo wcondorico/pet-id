@@ -16,7 +16,7 @@ export class ProfileView {
   options = signal<OptionCard[]>(
     [
       { icon: 'pets', text: 'Mis mascotas', route: 'my-pets' },
-      { icon: 'event', text: 'Mis anuncios', route: '' },
+      { icon: 'event', text: 'Mis anuncios', route: 'announcement' },
       { icon: 'volunteer_activism', text: 'Adopción', route: 'adoptions'  },
       { icon: 'close', text: 'Eliminar cuenta', route: ''  }
     ]
