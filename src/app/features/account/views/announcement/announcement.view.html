@@ -1,0 +1,10 @@
+<section class="announcement">
+  <app-title>Mascotas en adopción</app-title>
+
+  <div class="adoptions__list">
+    @for (adopt of petsAdoption(); track $index) {
+      <app-pet-card img="{{adopt.img}}" name="{{adopt.name}}"></app-pet-card>
+    }
+  </div>
+
+</section>
