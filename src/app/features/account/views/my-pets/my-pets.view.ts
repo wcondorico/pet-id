@@ -6,8 +6,6 @@ import { Pet } from '@features/account/core/interface/pet.interface';
 import { ButtonComponent } from "../../../../components/button/button.component";
 import { PetCardComponent } from "../../../../components/card/pet-card/pet-card.component";
 import { TitleComponent } from "../../../../components/title/title.component";
-import { Pets } from './pets.interface';
-
 
 @Component({
   selector: 'app-my-pets',
@@ -16,10 +14,14 @@ import { Pets } from './pets.interface';
   styleUrl: './my-pets.view.scss'
 })
 export class MyPetsView implements OnInit{
-  private readonly petService: PetFacade = inject(PetFacade)
+  private readonly petService: PetFacade = inject(PetFacade);
   petsList = signal<Pet[]>([]);
 
   ngOnInit() {
+    this.getAllPets();
+  }
+
+  getAllPets() {
     this.petService.getAllPets().subscribe({
       next: (pets) => {
         this.petsList.set(pets);
@@ -29,17 +31,4 @@ export class MyPetsView implements OnInit{
       }
     })
   }
-
-
-  pets = signal<Pets[]>([
-    {
-      img: "images/cachorro.jpg",
-      name: "Pepito"
-    },
-    {
-      img: "images/cachorro.jpg",
-      name: "Huecito"
-    }
-  ])
-
 }

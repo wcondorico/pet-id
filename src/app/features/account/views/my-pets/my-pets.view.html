@@ -5,7 +5,7 @@
     dummy text of the printing and typesetting industry. Lorem Ipsum has been
     the industry's standard dummy text ever since the 1500s
   </app-p>
-  @for (pet of pets(); track $index) {
-  <app-pet-card img="{{pet.img}}" name="{{pet.name}}" anchor="Ver mascota"></app-pet-card>
+  @for (pet of petsList(); track $index) {
+  <app-pet-card img="{{pet.image}}" name="{{pet.name}}" anchor="Ver mascota"></app-pet-card>
   }
 </section>

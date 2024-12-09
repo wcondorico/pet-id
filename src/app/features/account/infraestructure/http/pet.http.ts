@@ -13,4 +13,21 @@ export class PetHttp extends PetRepository {
   getAllPets(): Observable<Pet[]>{
     return this.http.get<Pet[]>(this.url);
   }
+
+  getPet(id: number): Observable<Pet>{
+    return this.http.get<Pet>(`${this.url}/${id}`);
+  }
+
+  createPet(pet: Pet): Observable<Pet>{
+    return this.http.post<Pet>(this.url, pet);
+  }
+
+  updatePet(id: number, pet: Pet): Observable<Pet>{
+    return this.http.put<Pet>(`${this.url}/${id}`, pet);
+  }
+
+  deletePet(id: number): Observable<Pet>{
+    return this.http.delete<Pet>(`${this.url}/${id}`);
+  }
+
 }
