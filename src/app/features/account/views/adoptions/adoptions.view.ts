@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { InputComponent } from "../../../../components/input/input.component";
-import { Pets } from '../my-pets/pets.interface';
 import { PetCardComponent } from "../../../../components/card/pet-card/pet-card.component";
+import { InputComponent } from "../../../../components/input/input.component";
 import { TitleComponent } from "../../../../components/title/title.component";
 
 @Component({
@@ -11,7 +10,7 @@ import { TitleComponent } from "../../../../components/title/title.component";
   styleUrl: './adoptions.view.scss'
 })
 export class AdoptionsView {
-  petsAdoption = signal<Pets[]>([
+  petsAdoption = signal<{img: string, name: string}[]>([
     {
       img: "images/cachorro.jpg",
       name: "Pe2222"

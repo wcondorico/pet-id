@@ -2,9 +2,9 @@
   <app-title>Anuncios</app-title>
 
   <div class="announcement__list">
-    @for (announcement of announcements(); track $index) {
-    <app-announcement-card tittle="{{announcement.title}}" perfil="{{announcement.perfil}}">
-      {{announcement.text}}
+    @for (ad of ads(); track $index) {
+    <app-announcement-card tittle="{{ad.title}}" perfil="{{ad.image}}">
+      {{ad.description}}
     </app-announcement-card>
     }
   </div>

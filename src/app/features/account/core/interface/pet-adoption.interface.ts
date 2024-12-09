@@ -1,13 +1,13 @@
-export interface Pet {
+export interface PetAdoption {
   id?: number;
   name: string;
   lastName: string;
   age: number;
   description: string;
   image: string;
-  lostStatus: boolean;
-  sterilizedStatus: boolean;
-  handicappedStatus: boolean;
+  adoptionStatus: false;
+  sterilizedStatus: false;
+  handicappedStatus: false;
   userId?: number;
   genderId: number;
   specieId: number;
