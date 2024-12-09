@@ -8,9 +8,13 @@
       <p>Home</p>
       <i class="material-icons">home</i>
     </li>
-    <li class="header__login" [routerLink]="['/routePath']">
-      <p>Login or Register</p>
+    <li class="header__login" [routerLink]="['./auth']">
+      <p>Register</p>
       <i class="material-icons">person</i>
+    </li>
+    <li class="header__login" [routerLink]="['/routePath']">
+      <p>Login</p>
+      <i class="material-icons">login</i>
     </li>
   </ul>
 </div>

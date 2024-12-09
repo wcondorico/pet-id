@@ -1,6 +1,8 @@
-<button class="button">
+<button class="button" [ngClass]="{'active': contrastColor()}">
   @if (icon()) {
     <i class="material-icons">{{ icon() }}</i>
   }
-  <ng-content></ng-content>
+  <p>
+    <ng-content></ng-content>
+  </p>
 </button>

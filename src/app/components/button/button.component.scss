@@ -2,8 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #656565;
-  padding: 10px 15px;
+  padding: 35px;
   height: 40px;
   border-radius: 15px;
   font-size: 16px;
@@ -12,14 +11,27 @@
   border: none;
   gap: 5px;
   transition: background-color 0.3s;
+  cursor: pointer;
+  background-color: #666666;
 
   &:hover {
     background-color: #3b3b3b;
-    cursor: pointer;
   }
 
   i {
     font-size: 18px;
     width: 20px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.active {
+  background-color: #3b3b3b;
+
+  &:hover {
+    background-color: #121212;
   }
 }
