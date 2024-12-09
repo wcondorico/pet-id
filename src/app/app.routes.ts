@@ -6,8 +6,12 @@ export const routes: Routes = [
     loadChildren: () => import('./features/account/account.module').then(m => m.AccountModule)
   },
   {
+    path: 'home',
+    loadChildren: () => import('./features/home/home.module').then(m => m.AccountModule)
+  },
+  {
     path: '',
-    redirectTo: 'account',
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];

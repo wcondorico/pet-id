@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 80px;
+  align-items: center;
+  height: 100px;
+  background: #121212;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    & > p {
+      font-size: 34px;
+      font-weight: 900;
+      color: white;
+      position: relative;
+    }
+  }
+
+  &__login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    color: white;
+    transition: 0.3s;
+
+    & > p {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    &:hover {
+      color: rgb(71, 171, 218);
+    }
+  }
+}

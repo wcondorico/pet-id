@@ -4,6 +4,6 @@ export interface Vaccine {
   date: string;
   nextDueDate: string;
   note: string;
-  petId?: number;
-  petAdoptionId?: null;
+  petId?: number | null;
+  petAdoptionId?: number | null;
 }
