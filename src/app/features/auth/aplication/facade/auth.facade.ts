@@ -6,7 +6,7 @@ import { AuthRepository } from '@features/auth/domain/repository/auth.repository
 export class AuthFacade {
   auth = inject(AuthRepository);
 
-  SignUp(user: SignUp) {
+  signUp(user: SignUp) {
     return this.auth.signUp(user);
   }
 

@@ -1,19 +1,20 @@
 <div class="container">
   <div class="sign-up">
+
     <form class="sign-up__form" [formGroup]="formFirst" id="form1" #form1>
       <app-title style="text-align: center;">Registrate para ingresar a PetId</app-title>
-      <app-input type="email" icon="alternate_email" placeholder="Email"></app-input>
-      <app-input type="password" icon="visibility" placeholder="Contraseña"></app-input>
-      <app-input type="password" icon="visibility" placeholder="Confirmar contraseña"></app-input>
+      <app-input type="email" icon="alternate_email" placeholder="Email" formControlName="email"></app-input>
+      <app-input type="password" icon="visibility" placeholder="Contraseña" formControlName="password"></app-input>
+      <app-input type="password" icon="visibility" placeholder="Confirmar contraseña" formControlName="confirmPass"></app-input>
       <app-button class="sign-up__form--button" [contrastColor]="true" width="100%" (click)="nextOne()">
         Siguiente
       </app-button>
     </form>
 
     <form class="sign-up__form" [formGroup]="formSecond" id="form2" #form2>
-      <app-title style="text-align: center; margin-bottom: 30px;">Información personal</app-title>
-      <app-input type="text" icon="person" placeholder="Nombres"></app-input>
-      <app-input type="text" icon="person" placeholder="Apellidos"></app-input>
+      <app-title style="text-align: center; margin-bottom: 70px;">Información personal</app-title>
+      <app-input type="text" icon="person" placeholder="Nombres" formControlName="name"></app-input>
+      <app-input type="text" icon="person" placeholder="Apellidos" formControlName="lastName"></app-input>
       <div style="display: flex; justify-content: space-between; gap: 30px;">
         <app-button class="sign-up__form--button" [contrastColor]="true" width="100%" (click)="backOne()">
           Atras
@@ -26,8 +27,8 @@
 
     <form class="sign-up__form" [formGroup]="formThird" id="form3" #form3>
       <app-title style="text-align: center; margin-bottom: 40px;">Contacto</app-title>
-      <app-input type="telf" icon="call" placeholder="Teléfono"></app-input>
-      <app-input type="text" icon="location_on" placeholder="Dirección"></app-input>
+      <app-input type="telf" icon="call" placeholder="Teléfono" formControlName="address"></app-input>
+      <app-input type="text" icon="location_on" placeholder="Dirección" formControlName="phone"></app-input>
       <div style="display: flex; justify-content: space-between; gap: 30px;">
         <app-button class="sign-up__form--button" [contrastColor]="true" width="100%" (click)="backTwo()">
           Atras
@@ -38,11 +39,16 @@
       </div>
     </form>
 
+    <app-p class="sign-up__link">
+      ¿Ya tienes una cuenta? <a [routerLink]="['/auth/sign-in']"> Inicia sesión en PetId</a>
+    </app-p>
+
     <div class="sign-up__step-row">
       <div class="sign-up__step-row--progress" #progress>s</div>
       <div class="sign-up__step-row--column">Paso 1</div>
       <div class="sign-up__step-row--column">Paso 2</div>
       <div class="sign-up__step-row--column">Paso 3</div>
     </div>
+
   </div>
 </div>
