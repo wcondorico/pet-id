@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { NgOptimizedImage } from '@angular/common';
+import { Component, HostListener, inject, signal } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+import { TokensService } from '@features/auth/core/stores/tokens.service';
 
 @Component({
   selector: 'app-account',
@@ -9,9 +10,25 @@ import { NgOptimizedImage } from '@angular/common';
   styleUrl: './account.component.scss'
 })
 export class AccountComponent {
+  private readonly toneksService: TokensService = inject(TokensService);
+  private readonly router: Router = inject(Router);
   profileIsActivated = signal(false);
 
-  profileActivated(): void {
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent) {
+    const clickedInside = event.target instanceof HTMLElement && event.target.closest('.account__header--profile');
+    if (!clickedInside) {
+      this.profileIsActivated.set(false);
+    }
+  }
+
+  toggleMenu(): void {
     this.profileIsActivated.set(!this.profileIsActivated())
+  }
+
+  logOut() {
+    this.toneksService.accessToken = '';
+    this.toneksService.refreshToken = '';
+    this.router.navigate(['/auth/sign-in']);
   }
 }

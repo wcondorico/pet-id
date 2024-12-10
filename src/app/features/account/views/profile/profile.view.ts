@@ -1,10 +1,10 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { TitleComponent } from '@components/title/title.component';
+import { Router, RouterModule } from '@angular/router';
 import { ButtonCardComponent } from '@components/card/button-card/button-card.component';
-import { OptionsCardComponent } from '@components/card/options-card/options-card.component';
 import { OptionCard } from '@components/card/options-card/interfaces/option-card.interface';
+import { OptionsCardComponent } from '@components/card/options-card/options-card.component';
 import { InputComponent } from '@components/input/input.component';
+import { TitleComponent } from '@components/title/title.component';
 import { UserFacade } from '@features/account/aplication/facade/user.facade';
 import { User } from '@features/account/core/interface/user.interface';
 import { TokensService } from '@features/auth/core/stores/tokens.service';
@@ -17,7 +17,8 @@ import { TokensService } from '@features/auth/core/stores/tokens.service';
 })
 export class ProfileView implements OnInit{
   private readonly userService: UserFacade = inject(UserFacade);
-  private readonly tokensService: TokensService = inject(TokensService)
+  private readonly tokensService: TokensService = inject(TokensService);
+  private readonly router: Router = inject(Router);
 
   ngOnInit(): void {
     this.userService.getAllUsers().subscribe({
@@ -39,4 +40,8 @@ export class ProfileView implements OnInit{
       { icon: 'close', text: 'Eliminar cuenta', route: ''  }
     ]
   );
+
+  searchPets() {
+    this.router.navigate(['account/my-pets'])
+  }
 }

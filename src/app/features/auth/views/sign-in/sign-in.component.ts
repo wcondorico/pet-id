@@ -35,7 +35,7 @@ export class SignInComponent {
       tap((tokens: Tokens) => {
         this.tokensService.accessToken = tokens.access;
         this.tokensService.refreshToken = tokens.refresh;
-        console.log('access:',this.tokensService.accessToken, 'refresh:',this.tokensService.refreshToken);
+        console.log(this.loginForm.value);
       })).subscribe({
         next: () => {
         this.router.navigate(['account/profile']);
@@ -44,7 +44,5 @@ export class SignInComponent {
         console.log('error',err);
       }
     })
-
   }
-
 }

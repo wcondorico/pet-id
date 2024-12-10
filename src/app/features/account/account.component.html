@@ -4,24 +4,28 @@
       <img ngSrc="images/doge.svg" alt="" width="55" height="55">
       <p>PetID</p>
     </div>
-    <button class="account__header--profile" (click)="profileActivated()">
+    <button class="account__header--profile" (click)="toggleMenu()">
       <div class="dropdown">
         <i class="material-icons">manage_accounts</i>
         <i class="material-icons">keyboard_arrow_down</i>
       </div>
       @if (profileIsActivated()) {
-        <div class="options">
-          <ul>
-            <li>
+      <div class="options">
+        <ul>
+          <li>
+            <button>
               <i class="material-icons">person</i>
               Cuenta
+            </button>
             </li>
-            <li>
+          <li>
+            <button (click)="logOut()">
               <i class="material-icons">settings</i>
               Cerrar sesión
-            </li>
-          </ul>
-        </div>
+            </button>
+          </li>
+        </ul>
+      </div>
       }
     </button>
   </div>

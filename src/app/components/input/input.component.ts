@@ -24,12 +24,11 @@ export class InputComponent implements ControlValueAccessor {
   icon = input<string | undefined>();
   type = input<Input>('text');
   placeholder = input<string>('');
-  
   value = signal<string | null>(null);
   disabled = signal<boolean>(false);
 
   private onTouched = () => {};
-  private onChange = () => {};
+  private onChange: (value: string) => void = () => {};
 
   writeValue(value: any): void {
     this.value.set(value);
@@ -47,4 +46,10 @@ export class InputComponent implements ControlValueAccessor {
     this.disabled.set(isDisabled);
   }
 
+  onInput(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    this.value.set(input.value);
+    this.onChange(this.value()!);
+    this.onTouched();
+  }
 }
