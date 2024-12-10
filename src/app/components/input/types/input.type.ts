@@ -1,1 +1,1 @@
-export type Input = 'text' | 'number' | 'password' | 'email';
+export type Input = 'text' | 'number' | 'password' | 'email' | 'telf';

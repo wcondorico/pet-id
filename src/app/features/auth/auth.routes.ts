@@ -2,7 +2,7 @@ import { Routes } from "@angular/router";
 
 export const authRoutes: Routes = [
   {
-    path: '**',
+    path: '',
     redirectTo: 'sign-in',
     pathMatch: "full"
   },

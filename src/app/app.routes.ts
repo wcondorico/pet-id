@@ -15,7 +15,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'account',
+    redirectTo: 'auth',
     pathMatch: 'full'
   }
 ];

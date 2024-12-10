@@ -1,17 +1,11 @@
 <div class="container">
   <div class="sign-in">
-    <app-title style="text-align: center;">Bienvenido a PetId</app-title>
-    <form action="" class="sign-in__form">
-      <div class="sign-in__form--contain">
-        <app-input type="text" icon="person" placeholder="Nombres"></app-input>
-        <app-input type="text" icon="person" placeholder="Apellidos"></app-input>
-        <app-input type="number" icon="call" placeholder="Teléfono"></app-input>
-        <app-input type="text" icon="location_on" placeholder="Dirección"></app-input>
-      </div>
+    <app-title style="text-align: center;">Inicia sesión en PetId</app-title>
+    <form action="" class="sign-in__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <app-input type="email" icon="alternate_email" placeholder="Email"></app-input>
       <app-input type="password" icon="lock" placeholder="Contraseña"></app-input>
       <app-button class="sign-in__form--button" [contrastColor]="true">
-          Registrar
+          Iniciar sesión
       </app-button>
     </form>
   </div>

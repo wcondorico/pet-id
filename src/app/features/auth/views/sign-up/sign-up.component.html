@@ -1,1 +1,18 @@
-<p>sign-up works!</p>
+<div class="container">
+  <div class="sign-up">
+    <app-title style="text-align: center;">Registrate para ingresar a PetId</app-title>
+    <form action="" class="sign-up__form">
+      <div class="sign-up__form--contain">
+        <app-input type="text" icon="person" placeholder="Nombres"></app-input>
+        <app-input type="text" icon="person" placeholder="Apellidos"></app-input>
+        <app-input type="telf" icon="call" placeholder="Teléfono"></app-input>
+        <app-input type="text" icon="location_on" placeholder="Dirección"></app-input>
+      </div>
+      <app-input type="email" icon="alternate_email" placeholder="Email"></app-input>
+      <app-input type="password" icon="lock" placeholder="Contraseña"></app-input>
+      <app-button class="sign-up__form--button" [contrastColor]="true">
+          Registrar
+      </app-button>
+    </form>
+  </div>
+</div>

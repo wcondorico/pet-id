@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
-import { SignIn, SignUp } from '@features/account/core/interface/auth.interface';
-import { AuthRepository } from '@features/account/domain/repository/auth.repository';
+import { SignIn, SignUp } from '@features/auth/core/interfaces/auth.interface';
+import { AuthRepository } from '@features/auth/domain/repository/auth.repository';
 
 @Injectable()
 export class AuthFacade {

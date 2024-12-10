@@ -1,4 +1,4 @@
-import { SignIn, SignUp, Tokens } from "@features/account/core/interface/auth.interface";
+import { SignIn, SignUp, Tokens } from "@features/auth/core/interfaces/auth.interface";
 import { Observable } from "rxjs";
 
 export abstract class AuthRepository {

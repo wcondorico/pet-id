@@ -24,7 +24,7 @@ export class InputComponent implements ControlValueAccessor {
   icon = input<string | undefined>();
   type = input<Input>('text');
   placeholder = input<string>('');
-
+  
   value = signal<string | null>(null);
   disabled = signal<boolean>(false);
 
