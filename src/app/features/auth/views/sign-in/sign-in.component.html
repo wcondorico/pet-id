@@ -1,7 +1,7 @@
 <div class="container">
   <div class="sign-in">
     <app-title style="text-align: center;">Inicia sesión en PetId</app-title>
-    <form action="" class="sign-in__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form class="sign-in__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <app-input type="email" icon="alternate_email" placeholder="Email" formControlName="email"></app-input>
       <app-input type="password" icon="lock" placeholder="Contraseña" formControlName="password"></app-input>
       <app-button class="sign-in__form--button" [contrastColor]="true" width="100%">

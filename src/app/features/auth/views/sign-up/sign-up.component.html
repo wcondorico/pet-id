@@ -1,18 +1,48 @@
 <div class="container">
   <div class="sign-up">
-    <app-title style="text-align: center;">Registrate para ingresar a PetId</app-title>
-    <form action="" class="sign-up__form">
-      <div class="sign-up__form--contain">
-        <app-input type="text" icon="person" placeholder="Nombres"></app-input>
-        <app-input type="text" icon="person" placeholder="Apellidos"></app-input>
-        <app-input type="telf" icon="call" placeholder="Teléfono"></app-input>
-        <app-input type="text" icon="location_on" placeholder="Dirección"></app-input>
-      </div>
+    <form class="sign-up__form" [formGroup]="formFirst" id="form1" #form1>
+      <app-title style="text-align: center;">Registrate para ingresar a PetId</app-title>
       <app-input type="email" icon="alternate_email" placeholder="Email"></app-input>
-      <app-input type="password" icon="lock" placeholder="Contraseña"></app-input>
-      <app-button class="sign-up__form--button" [contrastColor]="true">
-          Registrar
+      <app-input type="password" icon="visibility" placeholder="Contraseña"></app-input>
+      <app-input type="password" icon="visibility" placeholder="Confirmar contraseña"></app-input>
+      <app-button class="sign-up__form--button" [contrastColor]="true" width="100%" (click)="nextOne()">
+        Siguiente
       </app-button>
     </form>
+
+    <form class="sign-up__form" [formGroup]="formSecond" id="form2" #form2>
+      <app-title style="text-align: center; margin-bottom: 30px;">Información personal</app-title>
+      <app-input type="text" icon="person" placeholder="Nombres"></app-input>
+      <app-input type="text" icon="person" placeholder="Apellidos"></app-input>
+      <div style="display: flex; justify-content: space-between; gap: 30px;">
+        <app-button class="sign-up__form--button" [contrastColor]="true" width="100%" (click)="backOne()">
+          Atras
+        </app-button>
+        <app-button class="sign-up__form--button" [contrastColor]="true" width="100%" (click)="nextTwo()">
+          Siguiente
+        </app-button>
+      </div>
+    </form>
+
+    <form class="sign-up__form" [formGroup]="formThird" id="form3" #form3>
+      <app-title style="text-align: center; margin-bottom: 40px;">Contacto</app-title>
+      <app-input type="telf" icon="call" placeholder="Teléfono"></app-input>
+      <app-input type="text" icon="location_on" placeholder="Dirección"></app-input>
+      <div style="display: flex; justify-content: space-between; gap: 30px;">
+        <app-button class="sign-up__form--button" [contrastColor]="true" width="100%" (click)="backTwo()">
+          Atras
+        </app-button>
+        <app-button class="sign-up__form--button" [contrastColor]="true" width="100%" (click)="onSubmit()">
+          Registrar
+        </app-button>
+      </div>
+    </form>
+
+    <div class="sign-up__step-row">
+      <div class="sign-up__step-row--progress" #progress>s</div>
+      <div class="sign-up__step-row--column">Paso 1</div>
+      <div class="sign-up__step-row--column">Paso 2</div>
+      <div class="sign-up__step-row--column">Paso 3</div>
+    </div>
   </div>
 </div>
