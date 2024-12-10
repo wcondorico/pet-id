@@ -10,4 +10,6 @@ import { Component, input } from '@angular/core';
 export class ButtonComponent {
   icon = input<string | undefined>();
   contrastColor = input<boolean | undefined>();
+  padding = input<string | undefined>();
+  width = input<string | undefined>();
 }

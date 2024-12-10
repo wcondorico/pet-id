@@ -4,9 +4,10 @@
     <form action="" class="sign-in__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <app-input type="email" icon="alternate_email" placeholder="Email" formControlName="email"></app-input>
       <app-input type="password" icon="lock" placeholder="Contraseña" formControlName="password"></app-input>
-      <app-button class="sign-in__form--button" [contrastColor]="true">
+      <app-button class="sign-in__form--button" [contrastColor]="true" width="100%">
           Iniciar sesión
       </app-button>
     </form>
+    <app-p style="font-size: 16px; text-align: center;">¿No tienes cuenta? <a [routerLink]="['/auth/sign-up']"> Registrate en PetId</a></app-p>
   </div>
 </div>

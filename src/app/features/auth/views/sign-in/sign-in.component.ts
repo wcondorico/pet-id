@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ButtonComponent } from '@components/button/button.component';
 import { TitleComponent } from '@components/title/title.component';
 import { AuthFacade } from '@features/auth/aplication/facade/auth.facade';
@@ -9,10 +9,11 @@ import { Tokens } from '@features/auth/core/interfaces/auth.interface';
 import { TokensService } from '@features/auth/core/stores/tokens.service';
 import { tap } from 'rxjs';
 import { InputComponent } from "../../../../components/input/input.component";
+import { PComponent } from '@components/p/p.component';
 
 @Component({
   selector: 'app-sign-in',
-  imports: [InputComponent, TitleComponent, ButtonComponent, ReactiveFormsModule, CommonModule],
+  imports: [InputComponent, TitleComponent, ButtonComponent, ReactiveFormsModule, CommonModule, PComponent, RouterLink],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss'
 })
