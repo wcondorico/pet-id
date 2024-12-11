@@ -10,7 +10,9 @@ import { ButtonComponent } from '@components/button/button.component';
 import { InputComponent } from '@components/form/input/input.component';
 import { TitleComponent } from '@components/title/title.component';
 import { CorrelativeFacade } from '@features/account/aplication/facade/correlative.facade';
+import { PetFacade } from '@features/account/aplication/facade/pet.facade';
 import { Race, Specie } from '@features/account/core/interface/correlative.interface';
+import { Pet } from '@features/account/core/interface/pet.interface';
 
 @Component({
   selector: 'app-new-pet',
@@ -31,6 +33,8 @@ import { Race, Specie } from '@features/account/core/interface/correlative.inter
 export class NewPetView implements OnInit{
   private readonly fb: FormBuilder = inject(FormBuilder);
   private readonly correlatives: CorrelativeFacade = inject(CorrelativeFacade);
+  private readonly petService: PetFacade = inject(PetFacade);
+
   species = signal<Specie[]>([]);
   races = signal<Race[]>([]);
   specieSelected = signal<string>('');
@@ -39,10 +43,15 @@ export class NewPetView implements OnInit{
   raceMenu = signal<boolean>(false);
 
 
-  test = [
-    {id: 'steak-0', specie: 'Steak'},
-    {id: 'pizza-1', specie: 'Pizza'},
-    {id: 'tacos-2', specie: 'Tacos'},
+  especie = [
+    {id: '0', specie: 'perro'},
+    {id: '1', specie: 'gato'},
+    {id: '2', specie: 'pajaro'},
+  ];
+  raza = [
+    {id: '0', specie: 'siames'},
+    {id: '1', specie: 'pastor'},
+    {id: '2', specie: 'alvino'},
   ];
 
   ngOnInit() {
@@ -55,7 +64,7 @@ export class NewPetView implements OnInit{
     lastName: ['', Validators.required],
     age: ['', Validators.required],
     description: ['', Validators.required],
-    image: ['', Validators.required],
+    image: ['/images/cachorro.jpg', Validators.required],
     lostStatus: ['', Validators.required],
     sterilizedStatus: ['', Validators.required],
     handicappedStatus: ['', Validators.required],
@@ -99,5 +108,25 @@ export class NewPetView implements OnInit{
   }
   toggleMenuRace(){
     this.raceMenu.set(!this.raceMenu());
+  }
+
+  addPet() {
+    const pet = signal<Pet>({
+      name: this.loginForm.value.name || '',
+      lastName: this.loginForm.value.lastName || '',
+      age: 2,
+      description: this.loginForm.value.description || '',
+      image: this.loginForm.value.image || '',
+      lostStatus: true,
+      sterilizedStatus: true,
+      handicappedStatus: true,
+      genderId: 1,
+      specieId: 1,
+      raceId: 1,
+    })
+    this.petService.createPet(pet()).subscribe({
+      next: pet => console.log(pet),
+      error: err => console.log(err)
+    })
   }
 }

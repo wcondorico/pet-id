@@ -16,7 +16,7 @@
       </div>
 
       <div class="form__row">
-        <div >
+        <div>
           <p class="label">Especie:</p>
           <div class="select">
             <button class="button" (click)="toggleMenuSpecie()">
@@ -27,7 +27,7 @@
             @if (specieMenu()) {
             <div class="options">
               <ul>
-                @for (item of test; track $index) {
+                @for (item of especie; track $index) {
                 <li>
                   <button (click)="selectSpecie(item.specie)">
                     {{item.specie}}
@@ -42,15 +42,15 @@
         <div>
           <p class="label">Raza:</p>
           <div class="select">
-            <button class="button" (click)="toggleMenuRace()">
+            <button class="button" (click)="toggleMenuRace()" [disabled]="!specieSelected()">
               {{raceSelected() || 'Seleccionar'}}
               <i class="material-icons">keyboard_arrow_down</i>
             </button>
 
-            @if (raceMenu()) {
+            @if (raceMenu() && specieSelected()) {
             <div class="options">
               <ul>
-                @for (item of test; track $index) {
+                @for (item of raza; track $index) {
                 <li>
                   <button (click)="selectRace(item.specie)">
                     {{item.specie}}
@@ -74,21 +74,22 @@
           <mat-radio-button value="2" style="width: 150px;">Hembra</mat-radio-button>
         </mat-radio-group>
       </div>
-        <mat-checkbox class="example-margin">Esterilizado</mat-checkbox>
+      <mat-checkbox class="example-margin">Esterilizado</mat-checkbox>
       <mat-checkbox class="example-margin">Discapacidad</mat-checkbox>
-      <div class="form__row">
+      <mat-checkbox class="example-margin">Perdido</mat-checkbox>
+      <div class="form__row" style="margin-bottom: 30px;">
         <div style="width: 100%;">
           <p class="label">Descripción:</p>
           <app-input type="text" placeholder="Descripción" formControlName="description"></app-input>
         </div>
       </div>
-      <div class="form__row" style="margin-bottom: 30px;">
+      <!-- <div class="form__row" style="margin-bottom: 30px;">
         <div style="width: 100%;">
           <p class="label">imagen:</p>
           <app-input type="text" placeholder="Imagen" formControlName="image"></app-input>
         </div>
-      </div>
-        <app-button class="form__button" [contrastColor]="true" width="100%">
+      </div> -->
+      <app-button class="form__button" [contrastColor]="true" width="100%" (click)="addPet()">
         Agregar mascota
       </app-button>
     </form>
