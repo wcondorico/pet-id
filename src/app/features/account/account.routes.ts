@@ -29,6 +29,10 @@ export const accountRoutes: Routes = [
       {
         path: 'ad',
         loadComponent: () => import('./views/ad/ad.view').then(c => c.AdtView)
+      },
+      {
+        path: 'new-pet',
+        loadComponent: () => import('./views/new-pet/new-pet.view').then(c => c.NewPetView)
       }
     ]
   }

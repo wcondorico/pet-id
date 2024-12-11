@@ -3,5 +3,5 @@ import { Observable } from "rxjs";
 
 export abstract class UserRepository {
   abstract getAllUsers(): Observable<User[]>;
-  abstract getUser(id: number): Observable<User>;
+  abstract getUser(): Observable<User>;
 }

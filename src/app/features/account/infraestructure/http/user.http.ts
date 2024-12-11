@@ -11,17 +11,17 @@ export class UserHttp extends UserRepository {
   private readonly http: HttpClient = inject(HttpClient);
   private readonly tokensService: TokensService = inject(TokensService);
   url = `${environment.api}/user`
-
-  getAllUsers(): Observable<User[]>{
-    return this.http.get<User[]>(this.url, {
-      headers: {
-        'Authorization': `Bearer ${this.tokensService.accessToken}`
-      }
-    });
+  private token = {
+    headers: {
+      'Authorization': `Bearer ${this.tokensService.accessToken}`
+    }
   }
 
-  getUser(id: number): Observable<User>{
-    console.log(this.tokensService.accessToken);
-    return this.http.get<User>(`${this.url}/${id}`);
+  getAllUsers(): Observable<User[]>{
+    return this.http.get<User[]>(this.url, this.token);
+  }
+
+  getUser(): Observable<User>{
+    return this.http.get<User>(`${this.url}/profile`, this.token);
   }
 }

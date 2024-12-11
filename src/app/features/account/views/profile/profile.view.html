@@ -1,11 +1,9 @@
 <div class="profile">
-  <app-title>Hola William</app-title>
-
-  <app-input type="text" placeholder="Buscar" icon="search"></app-input>
+  <app-title>Hola {{user()?.name}}</app-title>
 
   <div class="profile__options">
     <app-button-card title="Editar perfil" icon="edit" [routerLink]="['../edit-profile']"></app-button-card>
-    <app-button-card title="Mis mascotas" icon="pets" (click)="searchPets()"></app-button-card>
+    <app-button-card title="Nueva mascota" icon="pets" [routerLink]="['../new-pet']"></app-button-card>
   </div>
 
   <app-options-card title="Cuenta" [items]="options()"></app-options-card>

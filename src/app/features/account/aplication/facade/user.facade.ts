@@ -9,7 +9,7 @@ export class UserFacade {
     return this.user.getAllUsers();
   }
 
-  getUser(id: number) {
-    return this.user.getUser(id);
+  getUser() {
+    return this.user.getUser();
   }
 }
