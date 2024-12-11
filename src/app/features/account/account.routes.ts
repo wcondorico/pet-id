@@ -27,8 +27,8 @@ export const accountRoutes: Routes = [
         loadComponent: () => import('./views/adoptions/adoptions.view').then(c => c.AdoptionsView)
       },
       {
-        path: 'announcement',
-        loadComponent: () => import('./views/announcement/announcement.view').then(c => c.AnnouncementView)
+        path: 'ad',
+        loadComponent: () => import('./views/ad/ad.view').then(c => c.AdtView)
       }
     ]
   }

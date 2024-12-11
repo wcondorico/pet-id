@@ -34,10 +34,11 @@ export class ProfileView implements OnInit{
 
   options = signal<OptionCard[]>(
     [
-      { icon: 'pets', text: 'Mis mascotas', route: 'my-pets' },
-      { icon: 'event', text: 'Mis anuncios', route: 'announcement' },
-      { icon: 'volunteer_activism', text: 'Adopción', route: 'adoptions'  },
-      { icon: 'close', text: 'Eliminar cuenta', route: ''  }
+      { icon: 'pets', text: 'Mis mascotas', route: '/account/my-pets' },
+      { icon: 'event', text: 'Mis anuncios', route: '/account/ad' },
+      { icon: 'volunteer_activism', text: 'Adopción', route: '/account/adoptions'},
+      { icon: 'close', text: 'Cerrar sesión', route: '/auth/sign-in'},
+      { icon: 'close', text: 'Eliminar cuenta', route: ''}
     ]
   );
 
