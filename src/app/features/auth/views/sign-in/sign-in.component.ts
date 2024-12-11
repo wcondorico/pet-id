@@ -24,7 +24,7 @@ export class SignInComponent {
   private readonly router: Router = inject(Router);
 
   loginForm = this.fb.group({
-    email: ['carlos.mendoza@example.com', Validators.required],
+    email: ['jorge.lopez@example.com', Validators.required],
     password: ['prueba', Validators.required]
   })
 
@@ -36,7 +36,6 @@ export class SignInComponent {
       tap((tokens: Tokens) => {
         this.tokensService.accessToken = tokens.access;
         this.tokensService.refreshToken = tokens.refresh;
-        console.log(this.loginForm.value);
       })).subscribe({
         next: () => {
         this.router.navigate(['account/profile']);

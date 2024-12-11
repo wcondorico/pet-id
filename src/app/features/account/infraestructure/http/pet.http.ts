@@ -9,7 +9,7 @@ import { environment } from "../../../../../../environments/environment.developm
 @Injectable()
 export class PetHttp extends PetRepository {
   private readonly http: HttpClient = inject(HttpClient);
-  private readonly tokensService: TokensService = inject(TokensService)
+  private readonly tokensService: TokensService = inject(TokensService);
   url = `${environment.api}/pet`
 
   getAllPets(): Observable<Pet[]>{

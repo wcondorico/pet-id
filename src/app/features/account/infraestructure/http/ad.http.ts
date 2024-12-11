@@ -4,14 +4,20 @@ import { Ad } from "@features/account/core/interface/ad.interface";
 import { AdRepository } from "@features/account/domain/repository/ad.repository";
 import { Observable } from "rxjs";
 import { environment } from "../../../../../../environments/environment.development";
+import { TokensService } from "@features/auth/core/stores/tokens.service";
 
 @Injectable()
 export class AdHttp extends AdRepository {
   private readonly http: HttpClient = inject(HttpClient);
+  private readonly tokensService: TokensService = inject(TokensService);
   url = `${environment.api}/ad`
 
   getAllAds(): Observable<Ad[]>{
-    return this.http.get<Ad[]>(this.url);
+    return this.http.get<Ad[]>(this.url, {
+      headers: {
+        'Authorization': `Bearer ${this.tokensService.accessToken}`
+      }
+    });
   }
 
   getAd(id: number): Observable<Ad>{
