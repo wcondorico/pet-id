@@ -1,12 +1,18 @@
-.profile {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 25px;
+  .container {
+    max-width: 700px;
+    margin-inline: auto;
 
-  &__options {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    .profile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 25px;
+
+      &__options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+    }
   }
-}
+

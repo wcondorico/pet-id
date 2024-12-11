@@ -12,7 +12,7 @@ import { Ad } from '@features/account/core/interface/ad.interface';
   templateUrl: './ad.view.html',
   styleUrl: './ad.view.scss'
 })
-export class AdtView implements OnInit{
+export class AdView implements OnInit{
   private readonly adService = inject(AdFacade);
   ads = signal<Ad[]>([]);
 

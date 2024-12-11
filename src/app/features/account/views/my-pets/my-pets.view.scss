@@ -1,7 +1,12 @@
-.pets {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+.container {
+  max-width: 700px;
+  margin-inline: auto;
 
-  
+  .pets {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-sizing: border-box;
+
+  }
 }

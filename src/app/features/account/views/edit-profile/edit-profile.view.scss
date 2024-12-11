@@ -1,11 +1,16 @@
-.edit {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+.container {
+  max-width: 700px;
+  margin-inline: auto;
 
-  &__form {
+  .edit {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 }

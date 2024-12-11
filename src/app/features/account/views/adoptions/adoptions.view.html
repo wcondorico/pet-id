@@ -1,12 +1,14 @@
-<section class="adoptions">
-  <app-button icon="arrow_back_ios_new" routerLink="../"></app-button>
-  <app-title>Mascotas en adopción</app-title>
-  <app-input type="text" placeholder="Buscar" icon="search"></app-input>
+<div class="container">
+  <section class="adoptions">
+    <app-button icon="arrow_back_ios_new" routerLink="../"></app-button>
+    <app-title>Mascotas en adopción</app-title>
+    <app-input type="text" placeholder="Buscar" icon="search"></app-input>
 
-  <div class="adoptions__list">
-    @for (adopt of petsAdoptList(); track $index) {
-      <app-pet-card img="{{adopt.image}}" name="{{adopt.name}}"></app-pet-card>
-    }
-  </div>
-</section>
+    <div class="adoptions__list">
+      @for (adopt of petsAdoptList(); track $index) {
+        <app-pet-card img="{{adopt.image}}" name="{{adopt.name}}" id="{{adopt.id}}"></app-pet-card>
+      }
+    </div>
+  </section>
+</div>
 

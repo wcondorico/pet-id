@@ -27,12 +27,16 @@ export const accountRoutes: Routes = [
         loadComponent: () => import('./views/adoptions/adoptions.view').then(c => c.AdoptionsView)
       },
       {
-        path: 'ad',
-        loadComponent: () => import('./views/ad/ad.view').then(c => c.AdtView)
+        path: 'ads',
+        loadComponent: () => import('./views/ad/ad.view').then(c => c.AdView)
       },
       {
         path: 'new-pet',
         loadComponent: () => import('./views/new-pet/new-pet.view').then(c => c.NewPetView)
+      },
+      {
+        path: 'my-pets/detail/:id',
+        loadComponent: () => import('./views/pet-detail/pet-detail.view').then(c => c.PetDetailView)
       }
     ]
   }

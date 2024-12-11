@@ -10,30 +10,31 @@ import { environment } from "../../../../../../environments/environment.developm
 export class PetHttp extends PetRepository {
   private readonly http: HttpClient = inject(HttpClient);
   private readonly tokensService: TokensService = inject(TokensService);
-  url = `${environment.api}/pet`
+  url = `${environment.api}/pet`;
+  private token = {
+    headers: {
+      'Authorization': `Bearer ${this.tokensService.accessToken}`
+    }
+  }
 
   getAllPets(): Observable<Pet[]>{
-    return this.http.get<Pet[]>(this.url, {
-      headers: {
-        'Authorization': `Bearer ${this.tokensService.accessToken}`
-      }
-    });
+    return this.http.get<Pet[]>(this.url, this.token);
   }
 
   getPet(id: number): Observable<Pet>{
-    return this.http.get<Pet>(`${this.url}/${id}`);
+    return this.http.get<Pet>(`${this.url}/${id}`, this.token);
   }
 
   createPet(pet: Pet): Observable<Pet>{
-    return this.http.post<Pet>(this.url, pet);
+    return this.http.post<Pet>(this.url, pet, this.token);
   }
 
   updatePet(id: number, pet: Pet): Observable<Pet>{
-    return this.http.put<Pet>(`${this.url}/${id}`, pet);
+    return this.http.put<Pet>(`${this.url}/${id}`, pet, this.token);
   }
 
   deletePet(id: number): Observable<Pet>{
-    return this.http.delete<Pet>(`${this.url}/${id}`);
+    return this.http.delete<Pet>(`${this.url}/${id}`, this.token);
   }
 
 }

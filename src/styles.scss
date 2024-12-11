@@ -1,4 +1,5 @@
 @use "styles/fonts/montserrat";
+@use '@angular/material' as mat;
 
 html, body {
   width: 100%;
@@ -8,4 +9,38 @@ html, body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   background-color: #121212;
+
+  @include mat.radio-overrides((
+    label-text-color: rgb(235, 235, 235),
+    selected-icon-color: white,
+    selected-pressed-icon-color: white,
+    unselected-pressed-icon-color: white,
+    selected-hover-icon-color: white,
+    unselected-hover-icon-color: white,
+    selected-focus-icon-color: white,
+  ));
+
+  @include mat.checkbox-overrides((
+    label-text-color: rgb(235, 235, 235),
+    unselected-hover-icon-color: white,
+    selected-pressed-icon-color: white,
+    selected-checkmark-color: white,
+  ));
+
+  @include mat.select-overrides((
+    panel-background-color: rgb(180, 180, 180),
+    enabled-trigger-text-color: rgb(202, 202, 202),
+    disabled-trigger-text-color: white,
+    placeholder-text-color: white,
+    enabled-arrow-color: white,
+    disabled-arrow-color: white,
+    focused-arrow-color: white,
+    invalid-arrow-color: white,
+    trigger-text-font: white,
+    trigger-text-line-height: white,
+    trigger-text-size: white,
+    trigger-text-tracking: white,
+    trigger-text-weight: white,
+    arrow-transform: white,
+  ));
 }

@@ -1,10 +1,15 @@
-<div class="profile">
-  <app-title>Hola {{user()?.name}}</app-title>
+<div class="container">
 
-  <div class="profile__options">
-    <app-button-card title="Editar perfil" icon="edit" [routerLink]="['../edit-profile']"></app-button-card>
-    <app-button-card title="Nueva mascota" icon="pets" [routerLink]="['../new-pet']"></app-button-card>
+  <div class="profile">
+    <app-title>Hola {{user()?.name}}</app-title>
+
+    <div class="profile__options">
+      <app-button-card title="Editar perfil" icon="edit" [routerLink]="['../edit-profile']"></app-button-card>
+      <app-button-card title="Nueva mascota" icon="pets" [routerLink]="['../new-pet']"></app-button-card>
+    </div>
+
+    <app-options-card title="Cuenta" [items]="options()"></app-options-card>
   </div>
-
-  <app-options-card title="Cuenta" [items]="options()"></app-options-card>
 </div>
+
+

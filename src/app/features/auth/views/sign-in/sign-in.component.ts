@@ -8,7 +8,8 @@ import { AuthFacade } from '@features/auth/aplication/facade/auth.facade';
 import { Tokens } from '@features/auth/core/interfaces/auth.interface';
 import { TokensService } from '@features/auth/core/stores/tokens.service';
 import { tap } from 'rxjs';
-import { InputComponent } from "../../../../components/input/input.component";
+import { InputComponent } from '@components/form/input/input.component';
+
 import { PComponent } from '@components/p/p.component';
 
 @Component({

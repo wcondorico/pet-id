@@ -2,8 +2,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Component, forwardRef, input, signal } from '@angular/core';
-import { Input } from '@components/input/types/input.type';
+
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { Input } from './types/input.type';
 
 @Component({
   selector: 'app-input',

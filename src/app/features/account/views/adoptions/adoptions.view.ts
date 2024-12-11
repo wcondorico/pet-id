@@ -2,7 +2,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { PetAdoptionFacade } from '@features/account/aplication/facade/pet-adoption.facade';
 import { PetAdoption } from '@features/account/core/interface/pet-adoption.interface';
 import { PetCardComponent } from "../../../../components/card/pet-card/pet-card.component";
-import { InputComponent } from "../../../../components/input/input.component";
+import { InputComponent } from '@components/form/input/input.component';
 import { TitleComponent } from "../../../../components/title/title.component";
 import { ButtonComponent } from '@components/button/button.component';
 import { RouterLink } from '@angular/router';

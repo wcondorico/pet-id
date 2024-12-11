@@ -11,25 +11,26 @@ export class PetAdoptionHttp extends PetAdoptionRepository {
   private readonly http: HttpClient = inject(HttpClient);
   private readonly tokensService: TokensService = inject(TokensService);
   url = `${environment.api}/pet-adoption`;
+  private token = {
+    headers: {
+      'Authorization': `Bearer ${this.tokensService.accessToken}`
+    }
+  }
 
   getAllPetsAdoption(): Observable<PetAdoption[]> {
-    return this.http.get<PetAdoption[]>(this.url, {
-      headers: {
-        'Authorization': `Bearer ${this.tokensService.accessToken}`
-      }
-    })
+    return this.http.get<PetAdoption[]>(this.url, this.token)
   }
   getPetAdoption(id: number): Observable<PetAdoption> {
-    return this.http.get<PetAdoption>(`${this.url}/${id}`)
+    return this.http.get<PetAdoption>(`${this.url}/${id}`, this.token)
   }
   createPetAdoption(pet: PetAdoption): Observable<PetAdoption> {
-    return this.http.post<PetAdoption>(this.url, pet)
+    return this.http.post<PetAdoption>(this.url, pet, this.token)
   }
   updatePetAdoption(id: number, pet: PetAdoption): Observable<PetAdoption> {
-    return this.http.put<PetAdoption>(`${this.url}/${id}`, pet)
+    return this.http.put<PetAdoption>(`${this.url}/${id}`, pet, this.token)
   }
   deletePetAdoption(id: number): Observable<PetAdoption> {
-    return this.http.delete<PetAdoption>(`${this.url}/${id}`)
+    return this.http.delete<PetAdoption>(`${this.url}/${id}`, this.token)
   }
 
 

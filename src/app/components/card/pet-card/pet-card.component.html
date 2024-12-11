@@ -1,7 +1,7 @@
-<section class="card">
+<a class="card" [routerLink]="['../my-pets/detail/',id()]">
   <img ngSrc="images/cachorro.jpg" alt="" width="60" height="45" priority>
-  <app-subtitle>{{name()}}</app-subtitle>
+  <app-subtitle style="text-align: start;">{{name()}}</app-subtitle>
   @if(anchor()) {
     <p>{{anchor()}}</p>
   }
-</section>
+</a>

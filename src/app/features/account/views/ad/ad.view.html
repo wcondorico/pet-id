@@ -1,11 +1,13 @@
-<section class="announcement">
-  <app-button icon="arrow_back_ios_new" routerLink="../"></app-button>
-  <app-title>Anuncios</app-title>
+<div class="container">
+  <section class="announcement">
+    <app-button icon="arrow_back_ios_new" routerLink="../"></app-button>
+    <app-title>Anuncios</app-title>
   <div class="announcement__list">
     @for (ad of ads(); track $index) {
-    <app-announcement-card tittle="{{ad.title}}" perfil="{{ad.image}}">
-      {{ad.description}}
-    </app-announcement-card>
+      <app-announcement-card tittle="{{ad.title}}" perfil="{{ad.image}}">
+        {{ad.description}}
+      </app-announcement-card>
     }
   </div>
 </section>
+</div>

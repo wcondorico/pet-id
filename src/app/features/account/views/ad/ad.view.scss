@@ -1,11 +1,16 @@
-.announcement {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+.container {
+  max-width: 700px;
+  margin-inline: auto;
 
-  &__list {
+  .announcement {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 }

@@ -27,7 +27,7 @@
 
     <form class="sign-up__form" [formGroup]="formThird" id="form3" #form3>
       <app-title style="text-align: center; margin-bottom: 40px;">Contacto</app-title>
-      <app-input type="telf" icon="call" placeholder="Teléfono" formControlName="address"></app-input>
+      <app-input type="text" icon="call" placeholder="Teléfono" formControlName="address"></app-input>
       <app-input type="text" icon="location_on" placeholder="Dirección" formControlName="phone"></app-input>
       <div style="display: flex; justify-content: space-between; gap: 30px;">
         <app-button class="sign-up__form--button" [contrastColor]="true" width="100%" (click)="backTwo()">

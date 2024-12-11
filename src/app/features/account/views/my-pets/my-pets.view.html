@@ -1,3 +1,4 @@
+<div class="container">
 <section class="pets">
   <app-button icon="arrow_back_ios_new" routerLink="../"></app-button>
   <app-title>Mis mascotas</app-title>
@@ -6,6 +7,8 @@
     the industry's standard dummy text ever since the 1500s
   </app-p>
   @for (pet of petsList(); track $index) {
-  <app-pet-card img="{{pet.image}}" name="{{pet.name}}" anchor="Ver mascota"></app-pet-card>
+  <app-pet-card img="{{pet.image}}" name="{{pet.name}}" id="{{pet.id}}" anchor="Ver mascota"></app-pet-card>
   }
 </section>
+
+</div>

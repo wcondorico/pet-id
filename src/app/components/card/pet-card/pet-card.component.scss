@@ -1,5 +1,6 @@
 .card {
   display: grid;
+  width: 100%;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   background-color: #656565;
@@ -8,6 +9,9 @@
   transition: background-color 0.3s;
   border-radius: 15px;
   gap: 10px;
+  border: 0;
+  text-decoration: none;
+  box-sizing: border-box;
 
   & > img {
     border-radius: 10px;
@@ -15,6 +19,7 @@
 
   & > p {
     color: white;
+    font-size: 18px;
     font-weight: 700;
   }
 
