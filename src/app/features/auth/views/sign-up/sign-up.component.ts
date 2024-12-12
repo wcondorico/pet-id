@@ -8,13 +8,14 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ButtonComponent } from '@components/button/button.component';
 import { InputComponent } from '@components/form/input/input.component';
 import { PComponent } from '@components/p/p.component';
 import { TitleComponent } from '@components/title/title.component';
 import { AuthFacade } from '@features/auth/aplication/facade/auth.facade';
 import { TokensService } from '@features/auth/core/stores/tokens.service';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-sign-up',
@@ -35,6 +36,7 @@ export class SignUpComponent {
   private readonly renderer: Renderer2 = inject(Renderer2);
   private readonly authService: AuthFacade = inject(AuthFacade);
   private readonly tokensService: TokensService = inject(TokensService);
+  private readonly router: Router = inject(Router);
   onVisibilityPass = signal<boolean>(false);
   onVisibility = signal<boolean>(false);
 
@@ -44,19 +46,19 @@ export class SignUpComponent {
   @ViewChild('progress') progress!: ElementRef;
 
   formFirst = this.fb.group({
-    email: ['aasa@gmail.com', [Validators.required, Validators.email]],
-    password: ['prueba', Validators.required],
-    confirmPass: ['prueba', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+    confirmPass: ['', Validators.required],
   });
 
   formSecond = this.fb.group({
-    name: ['John', Validators.required],
-    lastName: ['Wick', Validators.required],
+    name: ['', Validators.required],
+    lastName: ['', Validators.required],
   });
 
   formThird = this.fb.group({
-    address: ['su casa', Validators.required],
-    phone: ['555555555', Validators.required],
+    address: ['', Validators.required],
+    phone: ['', Validators.required],
   });
 
   onSubmit() {
@@ -70,8 +72,15 @@ export class SignUpComponent {
         phone: this.formThird.value.phone ?? '',
         email: this.formFirst.value.email ?? '',
         password: this.formFirst.value.password ?? '',
-      }).subscribe({
-        next: tokens => console.log(tokens),
+      }).pipe(
+        tap((tokens) => {
+          this.tokensService.accessToken = tokens.access;
+          this.tokensService.refreshToken = tokens.refresh;
+        }))
+      .subscribe({
+        next: () => {
+          this.router.navigate(['account/profile']);
+        },
         error: err => console.log('el error es: ', err)
       });
     }

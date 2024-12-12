@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ButtonCardComponent } from '@components/card/button-card/button-card.component';
@@ -9,7 +10,7 @@ import { User } from '@features/account/core/interface/user.interface';
 
 @Component({
   selector: 'app-profile',
-  imports: [TitleComponent, ButtonCardComponent, OptionsCardComponent, RouterModule],
+  imports: [TitleComponent, ButtonCardComponent, OptionsCardComponent, RouterModule, CommonModule],
   templateUrl: './profile.view.html',
   styleUrl: './profile.view.scss',
 })

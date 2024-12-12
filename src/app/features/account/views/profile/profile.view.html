@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="profile">
-    <app-title>Hola {{user()?.name}}</app-title>
+    <app-title>Hola {{user()?.name | uppercase }}</app-title>
 
     <div class="profile__options">
       <app-button-card title="Editar perfil" icon="edit" [routerLink]="['../edit-profile']"></app-button-card>

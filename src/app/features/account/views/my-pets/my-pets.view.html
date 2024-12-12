@@ -7,7 +7,7 @@
     the industry's standard dummy text ever since the 1500s
   </app-p>
   @for (pet of petsList(); track $index) {
-  <app-pet-card img="{{pet.image}}" name="{{pet.name}}" id="{{pet.id}}" anchor="Ver mascota"></app-pet-card>
+  <app-pet-card img="{{pet.image}}" name="{{pet.name}}" id="{{pet.id}}" anchor="Ver mascota" route="/account/my-pets/detail"></app-pet-card>
   }
 </section>
 

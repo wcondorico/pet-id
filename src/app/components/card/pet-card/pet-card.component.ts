@@ -15,6 +15,7 @@ export class PetCardComponent {
   name = input.required<string>();
   anchor = input<string | undefined>();
   id = input.required<string>();
+  route = input.required<string>();
 
 
 }

@@ -6,7 +6,7 @@
 
     <div class="adoptions__list">
       @for (adopt of petsAdoptList(); track $index) {
-        <app-pet-card img="{{adopt.image}}" name="{{adopt.name}}" id="{{adopt.id}}"></app-pet-card>
+        <app-pet-card img="{{adopt.image}}" name="{{adopt.name}}" id="{{adopt.id}}" route="/account/adoptions/detail"></app-pet-card>
       }
     </div>
   </section>

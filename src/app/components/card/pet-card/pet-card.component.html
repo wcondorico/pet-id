@@ -1,4 +1,4 @@
-<a class="card" [routerLink]="['../my-pets/detail/',id()]">
+<a class="card" [routerLink]="[route(),id()]">
   <img ngSrc="images/cachorro.jpg" alt="" width="60" height="45" priority>
   <app-subtitle style="text-align: start;">{{name()}}</app-subtitle>
   @if(anchor()) {

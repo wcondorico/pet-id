@@ -2,30 +2,30 @@
 
   <app-button icon="arrow_back_ios_new" routerLink="../../"></app-button>
   <div class="detail">
-    <app-title style="text-align: center;">{{pet()?.name}} {{pet()?.lastName}}</app-title>
+    <app-title style="text-align: center;">{{petAdoption()?.name}} {{petAdoption()?.lastName}}</app-title>
     <div class="detail__img">
       <img src="images/cachorro.jpg" alt="" width="100%" style="border-radius: 30px;">
     </div>
     <div class="detail__text">
       <app-p style="font-size: 20px; font-weight: 500;">
         <i class="material-icons" style="color: rgb(212, 212, 212);">pets</i>
-        Edad: {{pet()?.age}} meses
+        Edad: {{petAdoption()?.age}} meses
       </app-p>
       <app-p style="font-size: 20px; font-weight: 500;">
         <i class="material-icons" style="color: rgb(212, 212, 212);">pets</i>
-        Especie: {{pet()?.specieId}}
+        Especie: {{petAdoption()?.specieId}}
       </app-p>
       <app-p style="font-size: 20px; font-weight: 500;">
         <i class="material-icons" style="color: rgb(212, 212, 212);">pets</i>
-        Raza: {{pet()?.raceId}}
+        Raza: {{petAdoption()?.raceId}}
       </app-p>
       <app-p style="font-size: 20px; font-weight: 500;">
         <i class="material-icons" style="color: rgb(212, 212, 212);">pets</i>
-        Género: {{pet()?.genderId}}
+        Género: {{petAdoption()?.genderId}}
       </app-p>
       <app-p style="font-size: 20px; font-weight: 500;">
         <i class="material-icons" style="color: rgb(212, 212, 212);">pets</i>
-        Descripcion: {{pet()?.description}}
+        Descripcion: {{petAdoption()?.description}}
       </app-p>
     </div>
   </div>
