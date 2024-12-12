@@ -10,7 +10,7 @@ import { TokensService } from '@features/auth/core/stores/tokens.service';
   styleUrl: './account.component.scss'
 })
 export class AccountComponent {
-  private readonly toneksService: TokensService = inject(TokensService);
+  private readonly tonkesService: TokensService = inject(TokensService);
   private readonly router: Router = inject(Router);
   profileIsActivated = signal(false);
 
@@ -27,8 +27,12 @@ export class AccountComponent {
   }
 
   logOut() {
-    this.toneksService.accessToken = '';
-    this.toneksService.refreshToken = '';
+    this.clearTokens();
     this.router.navigate(['/auth/sign-in']);
+  }
+
+  clearTokens() {
+    this.tonkesService.accessToken = '';
+    this.tonkesService.refreshToken = '';
   }
 }

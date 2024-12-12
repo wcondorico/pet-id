@@ -1,16 +1,18 @@
+
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ButtonComponent } from '@components/button/button.component';
+import { InputComponent } from '@components/form/input/input.component';
 import { TitleComponent } from '@components/title/title.component';
 import { AuthFacade } from '@features/auth/aplication/facade/auth.facade';
 import { Tokens } from '@features/auth/core/interfaces/auth.interface';
 import { TokensService } from '@features/auth/core/stores/tokens.service';
-import { tap } from 'rxjs';
-import { InputComponent } from '@components/form/input/input.component';
 
 import { PComponent } from '@components/p/p.component';
+import { tap } from 'rxjs';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -20,9 +22,9 @@ import { PComponent } from '@components/p/p.component';
 })
 export class SignInComponent {
   private readonly fb: FormBuilder = inject(FormBuilder);
+  private readonly router: Router = inject(Router);
   private readonly authService: AuthFacade = inject(AuthFacade);
   private readonly tokensService: TokensService = inject(TokensService);
-  private readonly router: Router = inject(Router);
 
   loginForm = this.fb.group({
     email: ['jorge.lopez@example.com', Validators.required],

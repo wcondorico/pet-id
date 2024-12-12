@@ -1,4 +1,5 @@
 import { Routes } from "@angular/router";
+import { authUserGuard } from "./core/guards/auth-user.guard";
 
 export const accountRoutes: Routes = [
   {
@@ -12,7 +13,8 @@ export const accountRoutes: Routes = [
       },
       {
         path: 'profile',
-        loadComponent: () => import('./views/profile/profile.view').then(c => c.ProfileView)
+        loadComponent: () => import('./views/profile/profile.view').then(c => c.ProfileView),
+        canActivate: [authUserGuard]
       },
       {
         path: 'edit-profile',

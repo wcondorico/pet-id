@@ -9,11 +9,11 @@ import { User } from '@features/account/core/interface/user.interface';
 
 @Component({
   selector: 'app-profile',
-  imports: [ TitleComponent, ButtonCardComponent, OptionsCardComponent, RouterModule ],
+  imports: [TitleComponent, ButtonCardComponent, OptionsCardComponent, RouterModule],
   templateUrl: './profile.view.html',
   styleUrl: './profile.view.scss',
 })
-export class ProfileView implements OnInit{
+export class ProfileView implements OnInit {
   private readonly userService: UserFacade = inject(UserFacade);
   private readonly router: Router = inject(Router);
   user = signal<User | null>(null);
@@ -23,19 +23,20 @@ export class ProfileView implements OnInit{
       next: (user: User) => {
         this.user.set(user);
       },
-      error: (err) => {
-        console.log('el error es: ',err);
+      error: err => {
+        console.log(err);
       }
     })
   }
+
 
   options = signal<OptionCard[]>(
     [
       { icon: 'pets', text: 'Mis mascotas', route: '/account/my-pets' },
       { icon: 'event', text: 'Mis anuncios', route: '/account/ads' },
-      { icon: 'volunteer_activism', text: 'Adopción', route: '/account/adoptions'},
-      { icon: 'close', text: 'Cerrar sesión', route: '/auth/sign-in'},
-      { icon: 'close', text: 'Eliminar cuenta', route: ''}
+      { icon: 'volunteer_activism', text: 'Adopción', route: '/account/adoptions' },
+      { icon: 'close', text: 'Cerrar sesión', route: '/auth/sign-in' },
+      { icon: 'close', text: 'Eliminar cuenta', route: '' }
     ]
   );
 }

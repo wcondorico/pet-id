@@ -25,10 +25,16 @@
 
       &__row {
         display: flex;
-        align-items: center;
+        align-items: start;
         max-width: 100%;
         gap: 20px;
         box-sizing: border-box;
+
+        small {
+          color: rgb(228, 61, 61);
+          font-size: 14px;
+          font-weight: 500;
+        }
       }
 
       &__button {
@@ -75,20 +81,21 @@
 
               &>button {
                 width: 100%;
-                padding: 10px 10px;
+                padding: 10px 15px;
                 background-color: transparent;
                 border: none;
                 display: flex;
                 justify-content: flex-start;
-                align-items: center;
+                align-items: start;
                 font-size: 15px;
                 font-weight: 500;
                 border-radius: 5px;
                 cursor: pointer;
                 transition: 0.3s;
+                text-align: left;
 
                 &:hover {
-                  background-color: rgb(207, 207, 207);
+                  background-color: rgb(170, 170, 170);
                 }
               }
             }

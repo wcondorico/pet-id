@@ -2,16 +2,36 @@
 
   <div class="new-pet">
     <app-title style="text-align: center;">Nueva mascota</app-title>
-    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form class="form" [formGroup]="loginForm">
 
       <div class="form__row">
-        <div style="width: 50%;">
+        <div style="width: 50%; position: relative;">
           <p class="label">Nombre:</p>
           <app-input type="text" placeholder="Peluche" formControlName="name"></app-input>
+          @if (loginForm.get('name')?.invalid && loginForm.get('name')?.touched) {
+            <div style="margin-top: 5px; padding-left: 10px;">
+              @if (loginForm.get('name')?.errors?.['required']) {
+                <small>El nombre es requerido</small>
+              }
+              @if (loginForm.get('name')?.errors?.['onlyLetters']) {
+                <small>El nombre solo puede contener letras</small>
+              }
+            </div>
+          }
         </div>
         <div style="width: 50%;">
           <p class="label">Apellido:</p>
           <app-input type="text" placeholder="Cáceres" formControlName="lastName"></app-input>
+          @if (loginForm.get('lastName')?.invalid && loginForm.get('lastName')?.touched) {
+            <div style="margin-top: 5px; padding-left: 10px;">
+              @if (loginForm.get('lastName')?.errors?.['required']) {
+                <small>El apellido es requerido</small>
+              }
+              @if (loginForm.get('lastName')?.errors?.['onlyLetters']) {
+                <small>El apellido solo puede contener letras</small>
+              }
+            </div>
+          }
         </div>
       </div>
 
@@ -27,9 +47,9 @@
             @if (specieMenu()) {
             <div class="options">
               <ul>
-                @for (item of especie; track $index) {
+                @for (item of species(); track $index) {
                 <li>
-                  <button (click)="selectSpecie(item.specie)">
+                  <button (click)="selectSpecie(item.specie, item.id)">
                     {{item.specie}}
                   </button>
                 </li>
@@ -38,6 +58,11 @@
             </div>
             }
           </div>
+          @if (loginForm.get('specieId')?.invalid && loginForm.get('specieId')?.touched) {
+            <div style="margin-top: 5px; padding-left: 10px;">
+              <small style="color: rgb(228, 61, 61); font-size: 14px; font-weight: 500;">Debe seleccionar una especie</small>
+            </div>
+          }
         </div>
         <div>
           <p class="label">Raza:</p>
@@ -50,10 +75,10 @@
             @if (raceMenu() && specieSelected()) {
             <div class="options">
               <ul>
-                @for (item of raza; track $index) {
+                @for (item of races(); track $index) {
                 <li>
-                  <button (click)="selectRace(item.specie)">
-                    {{item.specie}}
+                  <button (click)="selectRace(item.race, item.id)">
+                    {{item.race}}
                   </button>
                 </li>
                 }
@@ -61,22 +86,45 @@
             </div>
             }
           </div>
+          @if (loginForm.get('raceId')?.invalid && loginForm.get('raceId')?.touched) {
+            <div style="margin-top: 5px; padding-left: 10px;">
+              <small style="color: rgb(228, 61, 61); font-size: 14px; font-weight: 500;">Debe seleccionar una raza</small>
+            </div>
+          }
         </div>
         <div>
           <p class="label">Edad:</p>
           <app-input type="text" placeholder="Meses" formControlName="age" style="width: 50px;"></app-input>
+          @if (loginForm.get('age')?.invalid && loginForm.get('age')?.touched) {
+            <div style="margin-top: 5px; padding-left: 10px;">
+              @if (loginForm.get('age')?.hasError('onlyNumbers')) {
+                <small>La edad es en números</small>
+              }
+              @if (loginForm.get('age')?.hasError('required')) {
+                <small>Edad requerida</small>
+              }
+            </div>
+          }
         </div>
       </div>
 
-      <div class="form__row" style="margin-top: 10px;">
-        <mat-radio-group style="display: flex;">
-          <mat-radio-button value="1" style="width: 150px;">Macho</mat-radio-button>
-          <mat-radio-button value="2" style="width: 150px;">Hembra</mat-radio-button>
-        </mat-radio-group>
-      </div>
-      <mat-checkbox class="example-margin">Esterilizado</mat-checkbox>
-      <mat-checkbox class="example-margin">Discapacidad</mat-checkbox>
-      <mat-checkbox class="example-margin">Perdido</mat-checkbox>
+        <div class="form__row" style="margin-top: 10px;">
+          <mat-radio-group style="display: flex;" formControlName="genderId">
+            <mat-radio-button value="1" style="width: 150px;">Macho</mat-radio-button>
+            <mat-radio-button value="2" style="width: 150px;">Hembra</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        @if (loginForm.get('genderId')?.invalid && loginForm.get('genderId')?.touched) {
+        <div style="margin-top: -15px; padding-left: 10px;">
+          @if (loginForm.get('genderId')?.hasError('required')) {
+            <small style="color: rgb(228, 61, 61); font-size: 14px; font-weight: 500;">Escoge un género</small>
+          }
+        </div>
+      }
+
+      <mat-checkbox formControlName="sterilizedStatus" class="example-margin">Esterilizado</mat-checkbox>
+      <mat-checkbox formControlName="handicappedStatus" class="example-margin">Discapacidad</mat-checkbox>
+      <mat-checkbox formControlName="lostStatus" class="example-margin">Perdido</mat-checkbox>
       <div class="form__row" style="margin-bottom: 30px;">
         <div style="width: 100%;">
           <p class="label">Descripción:</p>
@@ -89,7 +137,7 @@
           <app-input type="text" placeholder="Imagen" formControlName="image"></app-input>
         </div>
       </div> -->
-      <app-button class="form__button" [contrastColor]="true" width="100%" (click)="addPet()">
+      <app-button class="form__button" [contrastColor]="true" width="100%" (click)="onSubmit()">
         Agregar mascota
       </app-button>
     </form>

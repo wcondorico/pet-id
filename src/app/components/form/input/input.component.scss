@@ -23,5 +23,9 @@
     &:focus {
       outline: none;
     }
+
+    &::placeholder{
+      color: rgb(145, 145, 145);
+    }
   }
 }

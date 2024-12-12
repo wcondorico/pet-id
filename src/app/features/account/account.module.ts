@@ -59,7 +59,6 @@ import { VaccineHttp } from './infraestructure/http/vaccine.http';
       provide: VaccineFacade,
       useClass: VaccineHttp
     },
-
   ]
 })
 export class AccountModule { }
