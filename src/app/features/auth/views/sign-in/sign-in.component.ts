@@ -27,25 +27,30 @@ export class SignInComponent {
   private readonly tokensService: TokensService = inject(TokensService);
 
   loginForm = this.fb.group({
-    email: ['jorge.lopez@example.com', Validators.required],
+    email: ['jorge.lopez@example.com', [Validators.required, Validators.email]],
     password: ['prueba', Validators.required]
   })
 
   onSubmit() {
-    this.authService.signIn({
-      email: this.loginForm.value.email!,
-      password: this.loginForm.value.password!
-    }).pipe(
-      tap((tokens: Tokens) => {
-        this.tokensService.accessToken = tokens.access;
-        this.tokensService.refreshToken = tokens.refresh;
-      })).subscribe({
-        next: () => {
-        this.router.navigate(['account/profile']);
-      },
-      error: (err) => {
-        console.log('error',err);
-      }
-    })
+
+    if (this.loginForm.invalid) {
+      this.loginForm.markAllAsTouched();
+    } else {
+      this.authService.signIn({
+        email: this.loginForm.value.email!,
+        password: this.loginForm.value.password!
+      }).pipe(
+        tap((tokens: Tokens) => {
+          this.tokensService.accessToken = tokens.access;
+          this.tokensService.refreshToken = tokens.refresh;
+        })).subscribe({
+          next: () => {
+            this.router.navigate(['account/profile']);
+          },
+          error: (err) => {
+            console.log('error', err);
+          }
+        })
+    }
   }
 }

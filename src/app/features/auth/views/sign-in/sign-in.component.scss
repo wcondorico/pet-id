@@ -21,10 +21,11 @@
       gap: 30px;
       transition: 0.8s;
 
-      &--contain {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+      small {
+        color: rgb(228, 61, 61);
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: -50px;
       }
 
       &--button {

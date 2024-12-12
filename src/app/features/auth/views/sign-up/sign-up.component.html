@@ -3,9 +3,63 @@
 
     <form class="sign-up__form" [formGroup]="formFirst" id="form1" #form1>
       <app-title style="text-align: center;">Registrate para ingresar a PetId</app-title>
-      <app-input type="email" icon="alternate_email" placeholder="Email" formControlName="email"></app-input>
-      <app-input type="password" icon="visibility" placeholder="Contraseña" formControlName="password"></app-input>
-      <app-input type="password" icon="visibility" placeholder="Confirmar contraseña" formControlName="confirmPass"></app-input>
+      <div>
+        <app-input type="email" icon="alternate_email" placeholder="Email" formControlName="email"></app-input>
+        @if (formFirst.get('email')?.invalid && formFirst.get('email')?.touched) {
+          <div style="margin-top: 5px; padding-left: 10px;">
+            @if (formFirst.get('email')?.errors?.['required']) {
+              <small>El correo es requerido</small>
+            }
+            @if (formFirst.get('email')?.errors?.['email']) {
+              <small>Correo inválido</small>
+            }
+          </div>
+        }
+      </div>
+      <div>
+        <div class="password">
+          @if(onVisibilityPass()===true){
+            <button (click)="setOffVisibilityPass()">
+              <i class="material-icons" >visibility</i>
+            </button>
+          }
+          @if (onVisibilityPass()===false) {
+              <button (click)="setOnVisibilityPass()">
+                <i class="material-icons">visibility_off</i>
+              </button>
+          }
+          <input [type]="onVisibilityPass() ? 'text' : 'password'" placeholder="Contraseña" formControlName="password">
+        </div>
+        @if (formFirst.get('password')?.invalid && formFirst.get('password')?.touched) {
+          <div style="margin-top: 5px; padding-left: 10px;">
+            @if (formFirst.get('password')?.errors?.['required']) {
+              <small>La contraseña es requerida</small>
+            }
+          </div>
+        }
+      </div>
+      <div>
+        <div class="password">
+          @if(onVisibility()===true){
+            <button (click)="setOffVisibility()">
+              <i class="material-icons" >visibility</i>
+            </button>
+          }
+          @if (onVisibility()===false) {
+              <button (click)="setOnVisibility()">
+                <i class="material-icons">visibility_off</i>
+              </button>
+          }
+          <input [type]="onVisibility() ? 'text' : 'password'" placeholder="Confirmar contraseña" formControlName="confirmPass">
+        </div>
+        @if (formFirst.get('confirmPass')?.invalid && formFirst.get('confirmPass')?.touched) {
+          <div style="margin-top: 5px; padding-left: 10px;">
+            @if (formFirst.get('confirmPass')?.errors?.['required']) {
+              <small>La contraseña es requerida</small>
+            }
+          </div>
+        }
+      </div>
       <app-button class="sign-up__form--button" [contrastColor]="true" width="100%" (click)="nextOne()">
         Siguiente
       </app-button>
@@ -13,8 +67,26 @@
 
     <form class="sign-up__form" [formGroup]="formSecond" id="form2" #form2>
       <app-title style="text-align: center; margin-bottom: 70px;">Información personal</app-title>
-      <app-input type="text" icon="person" placeholder="Nombres" formControlName="name"></app-input>
-      <app-input type="text" icon="person" placeholder="Apellidos" formControlName="lastName"></app-input>
+      <div>
+        <app-input type="text" icon="person" placeholder="Nombres" formControlName="name"></app-input>
+        @if (formSecond.get('name')?.invalid && formSecond.get('name')?.touched) {
+          <div style="margin-top: 5px; padding-left: 10px;">
+            @if (formSecond.get('name')?.errors?.['required']) {
+              <small>El nombre es requerido</small>
+            }
+          </div>
+        }
+      </div>
+      <div>
+        <app-input type="text" icon="person" placeholder="Apellidos" formControlName="lastName"></app-input>
+        @if (formSecond.get('lastName')?.invalid && formSecond.get('lastName')?.touched) {
+          <div style="margin-top: 5px; padding-left: 10px;">
+            @if (formSecond.get('lastName')?.errors?.['required']) {
+              <small>El apellido es requerido</small>
+            }
+          </div>
+        }
+      </div>
       <div style="display: flex; justify-content: space-between; gap: 30px;">
         <app-button class="sign-up__form--button" [contrastColor]="true" width="100%" (click)="backOne()">
           Atras
@@ -27,9 +99,27 @@
 
     <form class="sign-up__form" [formGroup]="formThird" id="form3" #form3>
       <app-title style="text-align: center; margin-bottom: 40px;">Contacto</app-title>
-      <app-input type="text" icon="call" placeholder="Teléfono" formControlName="address"></app-input>
-      <app-input type="text" icon="location_on" placeholder="Dirección" formControlName="phone"></app-input>
-      <div style="display: flex; justify-content: space-between; gap: 30px;">
+      <div>
+        <app-input type="text" icon="call" placeholder="Teléfono" formControlName="address"></app-input>
+        @if (formThird.get('address')?.invalid && formThird.get('address')?.touched) {
+          <div style="margin-top: 5px; padding-left: 10px;">
+            @if (formThird.get('address')?.errors?.['required']) {
+              <small>La dirección es requerida</small>
+            }
+          </div>
+        }
+      </div>
+      <div>
+        <app-input type="text" icon="location_on" placeholder="Dirección" formControlName="phone"></app-input>
+        @if (formThird.get('phone')?.invalid && formThird.get('phone')?.touched) {
+          <div style="margin-top: 5px; padding-left: 10px;">
+            @if (formThird.get('phone')?.errors?.['required']) {
+              <small>El teléfono es requerida</small>
+            }
+          </div>
+        }
+      </div>
+        <div style="display: flex; justify-content: space-between; gap: 30px;">
         <app-button class="sign-up__form--button" [contrastColor]="true" width="100%" (click)="backTwo()">
           Atras
         </app-button>

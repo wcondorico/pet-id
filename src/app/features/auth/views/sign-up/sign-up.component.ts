@@ -4,6 +4,7 @@ import {
   ElementRef,
   inject,
   Renderer2,
+  signal,
   ViewChild,
 } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -34,6 +35,8 @@ export class SignUpComponent {
   private readonly renderer: Renderer2 = inject(Renderer2);
   private readonly authService: AuthFacade = inject(AuthFacade);
   private readonly tokensService: TokensService = inject(TokensService);
+  onVisibilityPass = signal<boolean>(false);
+  onVisibility = signal<boolean>(false);
 
   @ViewChild('form1') form1!: ElementRef;
   @ViewChild('form2') form2!: ElementRef;
@@ -41,7 +44,7 @@ export class SignUpComponent {
   @ViewChild('progress') progress!: ElementRef;
 
   formFirst = this.fb.group({
-    email: ['aasa@gmail.com', Validators.required],
+    email: ['aasa@gmail.com', [Validators.required, Validators.email]],
     password: ['prueba', Validators.required],
     confirmPass: ['prueba', Validators.required],
   });
@@ -57,30 +60,41 @@ export class SignUpComponent {
   });
 
   onSubmit() {
-    console.log(1);
-    this.authService.signUp({
-      name: this.formSecond.value.name ?? '',
-      lastName: this.formSecond.value.name ?? '',
-      address: this.formThird.value.address ?? '',
-      phone: this.formThird.value.phone ?? '',
-      email: this.formFirst.value.email ?? '',
-      password: this.formFirst.value.password ?? '',
-    }).subscribe({
-      next: tokens => console.log(tokens),
-      error: err => console.log('el error es: ',err)
+    if (this.formThird.invalid) {
+      this.formThird.markAllAsTouched();
+    } else {
+      this.authService.signUp({
+        name: this.formSecond.value.name ?? '',
+        lastName: this.formSecond.value.name ?? '',
+        address: this.formThird.value.address ?? '',
+        phone: this.formThird.value.phone ?? '',
+        email: this.formFirst.value.email ?? '',
+        password: this.formFirst.value.password ?? '',
+      }).subscribe({
+        next: tokens => console.log(tokens),
+        error: err => console.log('el error es: ', err)
       });
+    }
   }
 
   nextOne() {
-    this.renderer.setStyle(this.form1.nativeElement, 'left', '-550px');
-    this.renderer.setStyle(this.form2.nativeElement, 'left', '110px');
-    this.renderer.setStyle(this.progress.nativeElement, 'width', '380px');
+    if (this.formFirst.invalid) {
+      this.formFirst.markAllAsTouched();
+    } else {
+      this.renderer.setStyle(this.form1.nativeElement, 'left', '-550px');
+      this.renderer.setStyle(this.form2.nativeElement, 'left', '110px');
+      this.renderer.setStyle(this.progress.nativeElement, 'width', '380px');
+    }
   }
 
   nextTwo() {
-    this.renderer.setStyle(this.form2.nativeElement, 'left', '-550px');
-    this.renderer.setStyle(this.form3.nativeElement, 'left', '110px');
-    this.renderer.setStyle(this.progress.nativeElement, 'width', '600px');
+    if (this.formSecond.invalid) {
+      this.formSecond.markAllAsTouched();
+    } else {
+      this.renderer.setStyle(this.form2.nativeElement, 'left', '-550px');
+      this.renderer.setStyle(this.form3.nativeElement, 'left', '110px');
+      this.renderer.setStyle(this.progress.nativeElement, 'width', '600px');
+    }
   }
 
   backOne() {
@@ -93,5 +107,17 @@ export class SignUpComponent {
     this.renderer.setStyle(this.form2.nativeElement, 'left', '110px');
     this.renderer.setStyle(this.form3.nativeElement, 'left', '750px');
     this.renderer.setStyle(this.progress.nativeElement, 'width', '380px');
+  }
+  setOnVisibilityPass(){
+    this.onVisibilityPass.set(true);
+  }
+  setOffVisibilityPass(){
+    this.onVisibilityPass.set(false);
+  }
+  setOnVisibility(){
+    this.onVisibility.set(true);
+  }
+  setOffVisibility(){
+    this.onVisibility.set(false);
   }
 }
