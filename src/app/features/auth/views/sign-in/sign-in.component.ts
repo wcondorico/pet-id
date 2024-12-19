@@ -27,8 +27,8 @@ export class SignInComponent {
   private readonly tokensService: TokensService = inject(TokensService);
 
   loginForm = this.fb.group({
-    email: ['jorge.lopez@example.com', [Validators.required, Validators.email]],
-    password: ['prueba', Validators.required]
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required]
   })
 
   onSubmit() {

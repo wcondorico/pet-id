@@ -11,5 +11,5 @@ import { NgOptimizedImage } from '@angular/common';
 })
 export class AnnouncementCardComponent {
   tittle = input.required<string>();
-  perfil = input.required<string>();
+  perfil = input<string>();
 }

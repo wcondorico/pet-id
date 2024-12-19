@@ -30,7 +30,6 @@ export class ProfileView implements OnInit {
     })
   }
 
-
   options = signal<OptionCard[]>(
     [
       { icon: 'pets', text: 'Mis mascotas', route: '/account/my-pets' },
